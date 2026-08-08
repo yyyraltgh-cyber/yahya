@@ -1,0 +1,27 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# Next.js
+.next/
+out/
+next-env.d.ts.bak
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Android / Gradle
+android/.gradle/
+android/app/build/
+android/build/
+android/local.properties
+android/captures/
+android/*.iml
+android/.idea/
+
+# Misc
+.DS_Store
+*.log
+release/

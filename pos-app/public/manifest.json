@@ -1,0 +1,23 @@
+{
+  "name": "Personal OS",
+  "short_name": "Personal OS",
+  "description": "Personal Operating System \u2014 tasks, notes, habits, routines, calendar, reviews, knowledge base, and statistics in one place.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0c1917",
+  "theme_color": "#0c1917",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

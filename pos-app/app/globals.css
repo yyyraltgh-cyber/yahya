@@ -1,0 +1,781 @@
+@import "tailwindcss";
+
+/**
+ * Visual identity: deep emerald (mosque tilework) + warm gold (manuscript
+ * illumination) on a parchment-warm light theme / teal-black dark theme —
+ * deliberately not the generic indigo-on-near-black default this app
+ * started with. --font-display (Reem Kufi, a geometric Kufic-inspired
+ * face) is used sparingly for headings and celebratory moments only;
+ * --font-sans (Tajawal) carries all body text, labels, and buttons.
+ */
+@theme {
+  --color-background: #0c1917;
+  --color-surface: #132420;
+  --color-surface-hover: #1a2f2a;
+  --color-border: #22392f;
+  --color-primary: #2dbf9e;
+  --color-primary-hover: #26a88a;
+  --color-accent: #c89b3c;
+  --color-text: #ede8dd;
+  --color-text-muted: #9ba89f;
+  --color-success: #3fa66b;
+  --color-warning: #c89b3c;
+  --color-danger: #d9695c;
+  --font-sans: var(--font-tajawal), "Tajawal", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-reem-kufi), "Reem Kufi", var(--font-sans);
+
+  /* Spacing scale (CR-D1). Generous by default, per the Design Language
+     principle that spacing should "feel unhurried" — this is a scale to
+     draw from, not a mandate to use the largest value everywhere. */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+
+  /* Radius scale (CR-D1). --radius-card matches Card's previous hardcoded
+     rounded-2xl exactly — this is a naming change, not a visual change. */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-card: 1rem;
+  --radius-full: 9999px;
+
+  /* Elevation scale. Two levels only, deliberately — a third tier is not
+     to be added without a Design Philosophy review, since more shadow
+     tiers is exactly the kind of "scattered ornamentation" that
+     principle warns against.
+
+     Design DNA — Lighting Philosophy: shadow is reserved for the rare
+     moment something is genuinely being lifted (a card mid-press, a
+     sheet above the page) — never a default surface treatment. Neither
+     token below is applied automatically by Card; --elevation-raised is
+     only ever reached via :hover/:active on an `interactive` surface,
+     or by an overlay (Dialog/Sheet) that is legitimately floating above
+     the page. A flat, bordered surface is the correct default state for
+     everything else. */
+  --elevation-card: 0 1px 2px rgba(0, 0, 0, 0.04), 0 8px 24px -12px var(--color-primary);
+  --elevation-raised: 0 2px 4px rgba(0, 0, 0, 0.06), 0 16px 32px -16px var(--color-primary);
+
+  /* Motion timing. Three durations, still deliberately few: fast
+     (feedback, <200ms), base (a hover/press transition), settle
+     (an arrival — a sheet or dialog easing into place, ~550ms). */
+  --duration-fast: 150ms;
+  --duration-base: 220ms;
+  --duration-settle: 550ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Layer hierarchy — every stacking context in the app in one place, so
+     a new overlay never has to guess a z-index or risk colliding with
+     the persistent mobile bottom nav (which owns --z-nav, matching its
+     pre-existing z-50). Higher always means "more temporary" — Toast
+     outranks Dialog because a toast can appear while a dialog is open
+     and must still be seen. */
+  --z-nav: 50;
+  --z-overlay: 60;
+  --z-sheet: 70;
+  --z-dialog: 80;
+  --z-toast: 90;
+}
+
+/* Icon sizing convention (Sprint 2, documentation only — lucide-react
+   icons take a numeric `size` prop, not a CSS var). Three tiers app-wide:
+   14  → inline/badge/eyebrow icons (counts, meta rows)
+   16  → standard control icons (buttons, list-item icons, nav icons)
+   18–20 → featured/decorative icons (empty states, quick-action tiles,
+           card-header accents) — never body/control icons.
+   Pick the nearest tier; don't introduce a fourth. See lib/icon-sizes.ts
+   for the enforceable constants version of this same convention. */
+
+/* Blur system (documentation only — Tailwind's own blur-sm/md/lg/xl/2xl
+   scale already covers this; no custom tokens needed). Three intended
+   uses, don't invent a fourth:
+   blur-sm/md  → surface separation (a scrim behind a Sheet/Dialog)
+   blur-lg/xl  → background depth within the Garden scene (bokeh, ground)
+   blur-2xl    → atmospheric distance only (the Garden's furthest layer) */
+
+/* Glass surface — the one place a frosted, translucent panel is
+   appropriate: something floating temporarily above the page (Dialog,
+   Sheet scrim). Never used for anything that's part of the page's
+   permanent layout — permanent surfaces stay opaque and flat per the
+   Lighting Philosophy. backdrop-filter is real GPU cost, so this stays
+   reserved for overlays that exist briefly, not applied broadly. */
+.glass-surface {
+  background: color-mix(in srgb, var(--color-surface) 88%, transparent);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Light theme overrides, applied when <html class="light"> is set. */
+.light {
+  --color-background: #faf3e4;
+  --color-surface: #fffdf8;
+  --color-surface-hover: #f3ead4;
+  --color-border: #e3d6b8;
+  --color-primary: #0e7c66;
+  --color-primary-hover: #0b6553;
+  --color-accent: #b8862a;
+  --color-text: #2b241c;
+  --color-text-muted: #6b6155;
+  --color-success: #2f8f5b;
+  --color-warning: #b8862a;
+  --color-danger: #c0483d;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+/* Reserved for celebratory/heading moments (level-up, achievement titles,
+   page titles) — never body text, per the "spend boldness in one place"
+   principle. Applied explicitly via className="font-display" where used. */
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* ------------------------------------------------------------------ */
+/* Sprint 2 — unified typography hierarchy, focus system, control rhythm */
+/* ------------------------------------------------------------------ */
+
+/* Page titles: was invisible on mobile entirely (Topbar's h1 carried
+   `hidden sm:block`) — now the one consistent page-identity element on
+   every screen, all breakpoints. */
+.text-page-title {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+@media (min-width: 640px) {
+  .text-page-title {
+    font-size: 1.125rem;
+  }
+}
+
+/* Section titles: previously ad-hoc "font-medium" with inconsistent
+   bottom margin per file (mb-2 in one card, mb-4 in the next, on the
+   same page). One size, one weight, one spacing rhythm from here on. */
+.text-section-title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  margin-bottom: var(--space-3);
+}
+
+/* Subtitles / helper copy under a section title or field label. */
+.text-subtitle {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* Stat label + value pair: previously two different visual languages for
+   the same concept (achievements page used plain 14px muted text above a
+   32px number; the Home stats grid used a 10px uppercase eyebrow). One
+   pattern now, used by both. */
+.text-stat-label {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--color-text-muted);
+}
+.text-stat-value {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* Focus-visible ring: the only focus feedback most controls had before
+   was a border color change (invisible to anyone relying on a visible
+   focus indicator for keyboard navigation). One ring, one color source,
+   applied consistently via the .focus-ring utility. */
+.focus-ring {
+  outline: none;
+}
+.focus-ring:focus-visible {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 35%, transparent);
+}
+
+/* ------------------------------------------------------------------ */
+/* Sprint 4 — ambient hero band + floating Garden orb (Executive       */
+/* Override: the hero must no longer read as "a bordered card like     */
+/* every other card" — it's the one place the product feels different */
+/* the instant the screen loads).                                     */
+/* ------------------------------------------------------------------ */
+.hero-band {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 90% 60% at 50% 0%, color-mix(in srgb, var(--color-primary) 16%, transparent) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 50% at 85% 100%, color-mix(in srgb, var(--color-accent) 12%, transparent) 0%, transparent 65%),
+    var(--color-surface);
+}
+
+/* .garden-orb-glow retired in Sprint 6 — the Garden moved from a
+   circular glow-halo composition to a layered scene (sky/ground), where
+   mood is carried by GardenSky's gradient, not a bright halo around the
+   plant. Superseded, not left as dead CSS. */
+
+/* Sprint 6 — a very small, slow rotation on the plant itself: the closest
+   approximation of "wind" possible without touching the static artwork.
+   Amplitude is intentionally tiny (±0.6deg) — read as ambient life, never
+   as an obviously animated sticker. */
+/* Release 5G — Wind Engine's one deliberate consumer: this keyframe now
+   reads --wind-amplitude/--wind-duration (set by GardenTile from real
+   Wind values) instead of two hardcoded numbers. Defaults (0.6deg, 8s)
+   are the exact original values — nothing that doesn't set these custom
+   properties changes at all. Still the same one animation; only its
+   parameters became data-driven. */
+@keyframes garden-sway {
+  0%,
+  100% {
+    transform: rotate(calc(-1 * var(--wind-amplitude, 0.6deg)));
+  }
+  50% {
+    transform: rotate(var(--wind-amplitude, 0.6deg));
+  }
+}
+.animate-garden-sway {
+  animation: garden-sway var(--wind-duration, 8s) ease-in-out infinite;
+  transform-origin: 50% 90%;
+}
+
+/* A slow, ambient "alive" pulse on the glow itself — this is the one
+   continuous motion in the whole product (Constitution §8 permits
+   "occasionally, quietly surprising" delight; this is the deliberate
+   exception: a living thing should read as living, at rest). Amplitude
+   is intentionally tiny (1 → 1.015) — a heartbeat, not a bounce. */
+@keyframes garden-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.015);
+  }
+}
+
+/* Release 2, Objective 5 — "a completed task should feel connected to the
+   user's world." Purely a CSS response to the native :checked state (see
+   Checkbox in components/ui/checkbox.tsx) — no business logic touched,
+   no new event handlers. A brief warm ring releases outward in the same
+   accent color the Garden uses for its own particles, then settles —
+   the same restrained "something real happened" language, not a
+   fireworks moment for an ordinary checkbox. */
+@keyframes checkbox-complete {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-accent) 45%, transparent);
+  }
+  100% {
+    box-shadow: 0 0 0 10px color-mix(in srgb, var(--color-accent) 0%, transparent);
+  }
+}
+.checkbox-input:checked {
+  animation: checkbox-complete 500ms var(--ease-out);
+}
+.animate-checkbox-complete {
+  animation: checkbox-complete 500ms var(--ease-out);
+}
+
+/* Ambient light motes — density/opacity driven by --mote-opacity (set
+   per growth level, see GardenParticles), never text, the "reward" and
+   "life" signals the brief asked for without words. */
+@keyframes garden-mote-float {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  15% {
+    opacity: var(--mote-opacity, 0.5);
+  }
+  85% {
+    opacity: var(--mote-opacity, 0.5);
+  }
+  100% {
+    transform: translateY(-34px) translateX(6px);
+    opacity: 0;
+  }
+}
+.animate-garden-mote {
+  animation: garden-mote-float 5.5s ease-in-out infinite;
+}
+
+/* Recovery weather — soft horizontal mist, gentler and less literal than
+   rain alone. "Neglect met with gentle tending needed, never something
+   taken away" (Constitution §6) — this reads as overcast, not stormy. */
+@keyframes garden-mist-drift {
+  0% {
+    transform: translateX(-8%);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.22;
+  }
+  100% {
+    transform: translateX(8%);
+    opacity: 0;
+  }
+}
+.animate-garden-mist {
+  animation: garden-mist-drift 7s ease-in-out infinite;
+}
+
+/* Dialog / Sheet entrance — a settle, not a pop: fade + very small
+   scale-up, using the shared settle duration/curve. */
+@keyframes overlay-scrim-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.animate-scrim-in {
+  animation: overlay-scrim-in var(--duration-base) ease-out both;
+}
+@keyframes dialog-panel-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+.animate-dialog-in {
+  animation: dialog-panel-in var(--duration-settle) var(--ease-out) both;
+}
+@keyframes sheet-panel-in {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.animate-sheet-in {
+  animation: sheet-panel-in var(--duration-settle) var(--ease-out) both;
+}
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-toast-in {
+  animation: toast-in var(--duration-base) var(--ease-out) both;
+}
+
+/* The app's one deliberate decorative signature is now the Garden scene
+   (components/garden/garden-scene.tsx), rendered in the Today header —
+   replaces the geometric star motif per the "no religious symbols"
+   directive. Hybrid architecture: illustrated stage images (public/garden/
+   stages/) + these CSS-only atmosphere/effect layers. */
+@keyframes garden-crossfade-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.animate-garden-crossfade-in {
+  /* Duration must match TRANSITION_MS in components/garden/garden-tile.tsx */
+  animation: garden-crossfade-in 380ms ease-out;
+}
+
+@keyframes garden-water-shimmer {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translateX(-30%);
+  }
+  50% {
+    opacity: 0.16;
+    transform: translateX(30%);
+  }
+}
+.animate-garden-water-shimmer {
+  background: linear-gradient(
+    115deg,
+    transparent 40%,
+    var(--color-primary) 50%,
+    transparent 60%
+  );
+  mix-blend-mode: screen;
+  animation: garden-water-shimmer 3.6s ease-in-out infinite;
+}
+
+@keyframes garden-rain {
+  0% {
+    transform: translateY(-6px);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(70px);
+    opacity: 0;
+  }
+}
+.animate-garden-rain {
+  animation: garden-rain 1.1s linear infinite;
+}
+
+@keyframes garden-glow {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.75;
+  }
+}
+.animate-garden-glow {
+  animation: garden-glow 1.2s ease-in-out infinite;
+}
+
+@keyframes garden-particle {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-26px) scale(0);
+    opacity: 0;
+  }
+}
+.animate-garden-particle {
+  animation: garden-particle 1s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-garden-crossfade-in,
+  .animate-garden-water-shimmer,
+  .animate-garden-rain,
+  .animate-garden-glow,
+  .animate-garden-particle,
+  .animate-garden-mote,
+  .animate-garden-sway,
+  .animate-garden-mist,
+  .animate-scrim-in,
+  .animate-dialog-in,
+  .animate-sheet-in,
+  .animate-toast-in,
+  .animate-home-fade-up,
+  .animate-page-in,
+  .animate-checkbox-complete,
+  .checkbox-input:checked,
+  .animate-garden-stage-in,
+  .animate-skeleton-shimmer {
+    animation: none;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Sprint 1 — Premium Home: entrance choreography, skeletons, staging  */
+/* ------------------------------------------------------------------ */
+
+/* One-time, gentle section entrance — never looping, never continuous
+   motion (Constitution §8: "nothing demands urgency it hasn't earned").
+   Stagger via the --delay custom property set inline per section. */
+@keyframes home-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-home-fade-up {
+  animation: home-fade-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: var(--delay, 0ms);
+}
+
+/* ------------------------------------------------------------------ */
+/* Contract 1B — Navigation Experience System: page transitions        */
+/* ------------------------------------------------------------------ */
+
+/* Every route change gets this once, on mount of the new screen — quick
+   (duration-base, not the slower "settle" tier) since navigation should
+   feel acknowledged, not ceremonial. A much smaller translateY than
+   home-fade-up on purpose: this is a wrapper around whatever the
+   destination screen already does, not a replacement for it. */
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-page-in {
+  animation: page-in var(--duration-base) var(--ease-out) both;
+}
+
+/* ------------------------------------------------------------------ */
+/* Release 2A/2B — World Integration: the shared ambient environment   */
+/* ------------------------------------------------------------------ */
+
+/* 2B: layered on three bands, not one. A sky-echo at top, a ground-echo
+   at bottom (mirroring the Garden's own sky+ground duality at a much
+   fainter, app-wide scale — this is what makes content feel like it
+   sits BETWEEN two environmental bands, not on top of one flat wash),
+   and a very quiet edge vignette so the page reads as a space with a
+   center of attention, not a uniform rectangle.
+   z-index: -1 is deliberate and load-bearing — these are real fixed
+   <div>s (see WorldAmbient), not pseudo-elements, specifically so a
+   negative z-index reliably keeps them behind every normal-flow Card on
+   the page. An earlier draft used ::before/::after at z-index 0, which
+   — because fixed-position elements form their own stacking layer —
+   would have painted on TOP of every Card's opaque surface, tinting
+   them. Caught and fixed before packaging. */
+.world-ambient-layer {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  transition: background var(--duration-settle) var(--ease-out);
+}
+.world-ambient-vignette {
+  background: radial-gradient(ellipse 90% 90% at 50% 40%, transparent 55%, rgba(0, 0, 0, 0.05) 100%);
+}
+.world-ambient-day .world-ambient-glow {
+  background:
+    radial-gradient(ellipse min(70vw, 600px) min(45vh, 420px) at 50% 0%, color-mix(in srgb, var(--color-accent) calc(9% * var(--ambient-intensity, 1)), transparent) 0%, transparent 68%),
+    radial-gradient(ellipse min(70vw, 600px) min(30vh, 260px) at 50% 100%, color-mix(in srgb, var(--color-primary) calc(7% * var(--ambient-intensity, 1)), transparent) 0%, transparent 70%);
+}
+.world-ambient-night .world-ambient-glow {
+  background:
+    radial-gradient(ellipse min(70vw, 600px) min(45vh, 420px) at 50% 0%, rgba(70, 100, 150, calc(0.09 * var(--ambient-intensity, 1))) 0%, transparent 68%),
+    radial-gradient(ellipse min(70vw, 600px) min(30vh, 260px) at 50% 100%, rgba(20, 30, 45, calc(0.12 * var(--ambient-intensity, 1))) 0%, transparent 70%);
+}
+
+/* 2B — the world reacting: a brief, whole-shell warmth increase driven by
+   the SAME celebrate() signal every task/habit/achievement completion
+   already fires (GamificationProvider's worldReacting). This is the
+   environment acknowledging what happened — distinct from, and in
+   addition to, the existing toast, never a popup or confetti itself.
+   --ambient-intensity multiplies the gradient strength above (the same
+   proven technique as the Garden's own --glow-intensity). */
+.world-ambient-reacting {
+  --ambient-intensity: 2.2;
+}
+
+/* ------------------------------------------------------------------ */
+/* Release 2C — Spatial World Architecture: the World Surface layer    */
+/* ------------------------------------------------------------------ */
+
+/* No color, no gradient, no glow — a light-catch highlight at the top
+   and a neutral contact shadow at the bottom is the entire technique.
+   The highlight is a plain white line at very low alpha (light hitting
+   an edge, not a themed color); the shadow is plain black at very low
+   alpha (weight and distance from the light source, not a colored
+   "elevation" glow like Card's own --elevation-card token). This is
+   deliberately a different visual grammar from Card's shadow system —
+   Card communicates "this control is interactive"; World Surface
+   communicates "this whole plane is grounded in the environment," a
+   level up in scale and a level down in decoration.
+   Release 5D: values now computed inline (world-surface.tsx) from the
+   shared Light Model instead of fixed here — retired rather than left
+   as dead CSS nobody reads anymore. */
+
+/* ------------------------------------------------------------------ */
+/* Release 3A — World Map Architecture: location identity              */
+/* ------------------------------------------------------------------ */
+
+/* One more independent layer under the day/night wash — a place keeps
+   its identity regardless of time of day; --location-intensity (set per
+   route by the atlas in lib/world/locations.ts) scales it, so "neutral"
+   destinations (intensity 0) render nothing extra at all. Same
+   color-mix/calc() technique as everything else in this system —
+   nothing new invented, only re-applied with a fourth variable. */
+.world-ambient-location-growth {
+  background: radial-gradient(
+    ellipse min(65vw, 560px) min(35vh, 320px) at 50% 55%,
+    color-mix(in srgb, var(--color-primary) calc(7% * var(--location-intensity, 1)), transparent) 0%,
+    transparent 72%
+  );
+}
+.world-ambient-location-focus {
+  background: radial-gradient(
+    ellipse min(50vw, 420px) min(28vh, 240px) at 50% 20%,
+    color-mix(in srgb, var(--color-text) calc(3% * var(--location-intensity, 1)), transparent) 0%,
+    transparent 75%
+  );
+}
+.world-ambient-location-warm {
+  background: radial-gradient(
+    ellipse min(65vw, 560px) min(38vh, 340px) at 50% 30%,
+    color-mix(in srgb, var(--color-accent) calc(8% * var(--location-intensity, 1)), transparent) 0%,
+    transparent 72%
+  );
+}
+.world-ambient-anchor-high.world-ambient-location-sky {
+  background: radial-gradient(
+    ellipse min(70vw, 600px) min(40vh, 360px) at 50% -10%,
+    rgba(90, 130, 190, calc(0.08 * var(--location-intensity, 1))) 0%,
+    transparent 70%
+  );
+}
+.world-ambient-anchor-low.world-ambient-location-sky {
+  background: radial-gradient(
+    ellipse min(70vw, 600px) min(40vh, 360px) at 50% 20%,
+    rgba(90, 130, 190, calc(0.08 * var(--location-intensity, 1))) 0%,
+    transparent 70%
+  );
+}
+.world-ambient-location-neutral {
+  background: none;
+}
+
+/* The Garden's own arrival on the Home screen — a single soft
+   scale+fade, distinct from the crossfade used for stage transitions. */
+@keyframes garden-stage-in {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.animate-garden-stage-in {
+  /* Entrance runs once; the breathing pulse picks up right after it
+     settles (0.6s delay) and then loops forever. Both must live in one
+     shorthand declaration — two separate classes each setting
+     `animation` would silently overwrite one another, not combine. */
+  animation:
+    garden-stage-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) both,
+    garden-breathe 6s ease-in-out 0.6s infinite;
+}
+
+/* Skeleton placeholders (CR-D2 / Sprint 1 Loading States) — a quiet
+   sweep, not a flashy shimmer, matching the product's calm register. */
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: -120% 0;
+  }
+  100% {
+    background-position: 120% 0;
+  }
+}
+.animate-skeleton-shimmer {
+  background-image: linear-gradient(
+    90deg,
+    var(--color-surface-hover) 25%,
+    var(--color-border) 50%,
+    var(--color-surface-hover) 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.8s ease-in-out infinite;
+}
+
+/* Garden backdrop has been fully reworked twice since (Sprint 4's
+   "display case" frame, Sprint 6's circular glow-halo) — see
+   components/garden/garden-sky.tsx and garden-ground.tsx for the
+   current layered-scene approach. Nothing kept here as dead CSS. */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-border);
+  border-radius: 9999px;
+}
+
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Gamification: toast entrance + XP bar fill animations */
+@keyframes celebration-in {
+  from {
+    opacity: 0;
+    transform: translateY(-12px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.animate-celebration-in {
+  animation: celebration-in 0.25s ease-out;
+}
+
+@keyframes xp-fill {
+  from {
+    width: 0%;
+  }
+}
+.animate-xp-fill {
+  animation: xp-fill 0.6s ease-out;
+}
+
+/* Design DNA — Motion Philosophy: looping motion belongs to the Garden
+   alone. This used to pulse forever (infinite) on every screen at all
+   times — a real violation, not just a stray detail. It now fires once,
+   only when the streak value itself changes (see StreakBadge's key={streak}),
+   the same "replay only on real change" pattern already used by the XP
+   fill bar. */
+@keyframes flame-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.25);
+  }
+}
+.animate-flame-pulse {
+  animation: flame-pulse 0.5s ease-out;
+}
+
+/* ------------------------------------------------------------------ */
+/* Android & Responsive Audit — safe-area clearance for the fixed      */
+/* mobile bottom nav (Sidebar.tsx's sm:hidden nav, itself given        */
+/* padding-bottom: env(safe-area-inset-bottom) so it isn't obscured by */
+/* a gesture nav bar). This is the matching content-side clearance so  */
+/* the page's own bottom content isn't hidden behind a now-taller nav  */
+/* on devices with a non-zero safe-area inset. env() with a fallback   */
+/* is a no-op (0px) on any device/browser without safe-area support,   */
+/* so this never adds unwanted space anywhere it isn't needed.         */
+/* Scoped to exactly the same breakpoint Tailwind's sm: prefix uses    */
+/* (Tailwind v4 default, 640px) — the fixed nav itself is sm:hidden,   */
+/* so this clearance must disappear at the same point the nav does,    */
+/* which an inline style could not have expressed correctly. */
+@media (max-width: 639.98px) {
+  .main-safe-area-bottom {
+    padding-bottom: calc(6rem + env(safe-area-inset-bottom, 0px));
+  }
+}

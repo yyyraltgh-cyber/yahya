@@ -1,0 +1,155 @@
+import type { ProjectTemplate } from "../types";
+
+/**
+ * 6 long-term health journeys. Same safety posture as habits/health.ts:
+ * no calorie/macro numbers, no numbered fasting windows, no specific
+ * temperatures, and any advanced/extended protocol is explicitly deferred
+ * to professional supervision rather than specified in detail.
+ */
+export const healthProjects: ProjectTemplate[] = [
+  {
+    id: "project_thirty_day_daily_movement",
+    title_ar: "مشروع الحركة اليومية لثلاثين يومًا",
+    title_en: "Thirty-Day Daily Movement Project",
+    description_ar: "رحلة 30 يومًا لترسيخ عادة الحركة اليومية، ولو كانت بسيطة، حتى تصبح جزءًا لا يتجزأ من يومك",
+    description_en: "A 30-day journey to establish a daily movement habit, however simple, until it becomes an integral part of your day",
+    category: "health",
+    difficulty: "beginner",
+    minLevel: 1,
+    durationDays: 30,
+    dailyCommitmentMinutes: 15,
+    milestones: [
+      { day: 7, title_ar: "أسبوع كامل من الحركة اليومية", title_en: "A full week of daily movement", reward: { xp: 30, badge: "بداية نشيطة" } },
+      { day: 15, title_ar: "نصف الرحلة بثبات", title_en: "Halfway through, staying consistent", reward: { xp: 35, badge: "نصف الطريق" } },
+      { day: 23, title_ar: "الحركة أصبحت أسهل من البداية", title_en: "Movement has become easier than at the start", reward: { xp: 40, badge: "زخم متصاعد" } },
+      { day: 30, title_ar: "ثلاثون يومًا متواصلة من الحركة", title_en: "Thirty consecutive days of movement", reward: { xp: 55, badge: "عادة الحركة" } },
+    ],
+    finalReward: { xp: 140, badge: "🏅 صاحب عادة الحركة اليومية", title_ar: "النشيط" },
+    icon: "🚶",
+    successStories: [
+      "من بدأ بعشر دقائق مشي فقط، وجد نفسه بعد أسبوعين يتطلع لهذا الوقت اليومي",
+      "الاستمرارية البسيطة تفوقت على محاولات سابقة بدأت بحماس زائد وانقطعت سريعًا",
+    ],
+  },
+  {
+    id: "project_progressive_fitness_building",
+    title_ar: "مشروع بناء اللياقة التدريجي",
+    title_en: "Progressive Fitness Building Project",
+    description_ar: "رحلة 60 يومًا لبناء لياقة بدنية حقيقية بزيادة تدريجية ومدروسة في النشاط",
+    description_en: "A 60-day journey to build genuine physical fitness through gradual, mindful increases in activity",
+    category: "health",
+    difficulty: "intermediate",
+    minLevel: 15,
+    durationDays: 60,
+    dailyCommitmentMinutes: 30,
+    milestones: [
+      { day: 15, title_ar: "أساس اللياقة تم بناؤه", title_en: "The fitness foundation has been built", reward: { xp: 40, badge: "أساس متين" } },
+      { day: 30, title_ar: "نصف الرحلة مع تحسن ملحوظ في القدرة على التحمل", title_en: "Halfway through with noticeable improvement in endurance", reward: { xp: 50, badge: "تقدم واضح" } },
+      { day: 45, title_ar: "قدرة بدنية أعلى بوضوح من بداية الرحلة", title_en: "Clearly higher physical capacity than at the journey's start", reward: { xp: 55, badge: "قوة متنامية" } },
+      { day: 60, title_ar: "ستون يومًا من بناء اللياقة التدريجي", title_en: "Sixty days of progressive fitness building", reward: { xp: 70, badge: "لياقة مكتسَبة" } },
+    ],
+    finalReward: { xp: 190, badge: "🏅 صاحب اللياقة المتنامية", title_ar: "القوي" },
+    icon: "🏃",
+    successStories: [
+      "من احترم التدرج ولم يستعجل، تجنب الإصابات التي أوقفت محاولات سابقة له",
+      "التحسن التدريجي كان أوضح من أي محاولة مكثفة قصيرة الأمد جربها سابقًا",
+    ],
+  },
+  {
+    id: "project_sleep_quality_improvement",
+    title_ar: "مشروع تحسين جودة النوم",
+    title_en: "Sleep Quality Improvement Project",
+    description_ar: "رحلة 21 يومًا لبناء عادات نوم صحية: مواعيد ثابتة، بيئة مهيأة، وابتعاد عن الشاشات مساءً",
+    description_en: "A 21-day journey to build healthy sleep habits: consistent timing, a prepared environment, and reduced evening screen time",
+    category: "health",
+    difficulty: "beginner",
+    minLevel: 1,
+    durationDays: 21,
+    dailyCommitmentMinutes: 20,
+    milestones: [
+      { day: 7, title_ar: "أسبوع من مواعيد نوم ثابتة", title_en: "A week of consistent sleep timing", reward: { xp: 25, badge: "انتظام مبكر" } },
+      { day: 14, title_ar: "نوم أعمق ملحوظ مقارنة ببداية الرحلة", title_en: "Noticeably deeper sleep compared to the journey's start", reward: { xp: 35, badge: "تحسن ملموس" } },
+      { day: 21, title_ar: "واحد وعشرون يومًا من عادات النوم الصحية", title_en: "Twenty-one days of healthy sleep habits", reward: { xp: 45, badge: "نائم صحي" } },
+    ],
+    finalReward: { xp: 120, badge: "🏅 صاحب النوم الصحي", title_ar: "المرتاح" },
+    icon: "🛌",
+    successStories: [
+      "من التزم بموعد نوم ثابت رغم صعوبة الأيام الأولى، شعر بفرق حقيقي في طاقة يومه",
+      "تقليل الشاشات مساءً كان أثره أوضح مما توقع في سرعة الخلود للنوم",
+    ],
+  },
+  {
+    id: "project_strength_and_discipline",
+    title_ar: "مشروع القوة والانضباط",
+    title_en: "Strength and Discipline Project",
+    // Safety: يُفضَّل بإشراف مدرّب مختص لضمان السلامة والتقدم الآمن
+    description_ar: "رحلة 60 يومًا لبناء القوة الجسدية والانضباط الذهني معًا، يُفضَّل بإشراف مدرّب مختص",
+    description_en: "A 60-day journey building physical strength and mental discipline together, ideally under a qualified trainer's supervision",
+    category: "health",
+    difficulty: "advanced",
+    minLevel: 35,
+    durationDays: 60,
+    dailyCommitmentMinutes: 45,
+    milestones: [
+      { day: 15, title_ar: "أسس القوة والانضباط تم إرساؤها", title_en: "The foundations of strength and discipline established", reward: { xp: 45, badge: "أساس قوي" } },
+      { day: 30, title_ar: "نصف الرحلة مع قوة ملموسة أعلى", title_en: "Halfway through with noticeably higher strength", reward: { xp: 55, badge: "تقدم صلب" } },
+      { day: 45, title_ar: "الانضباط أصبح طبعًا لا مجهودًا", title_en: "Discipline has become natural rather than effortful", reward: { xp: 60, badge: "انضباط راسخ" } },
+      { day: 60, title_ar: "ستون يومًا من القوة والانضباط المتصاعدين", title_en: "Sixty days of growing strength and discipline", reward: { xp: 75, badge: "قوي منضبط" } },
+    ],
+    finalReward: { xp: 210, badge: "🏅 صاحب القوة والانضباط", title_ar: "الجَلْد" },
+    icon: "🏋️",
+    successStories: [
+      "من اتبع برنامجًا بإشراف مختص، تقدم بأمان دون الإصابات التي واجهها في محاولات فردية سابقة",
+      "الانضباط الذهني الذي بناه في التمرين، انعكس على مجالات أخرى من حياته لم يتوقعها",
+    ],
+  },
+  {
+    id: "project_full_health_balance",
+    title_ar: "مشروع التوازن الصحي الشامل",
+    title_en: "Complete Health Balance Project",
+    description_ar: "رحلة 90 يومًا تجمع الحركة، النوم، التغذية الواعية، والصحة النفسية في مسار واحد متكامل",
+    description_en: "A 90-day journey combining movement, sleep, mindful nutrition, and mental health in one integrated path",
+    category: "health",
+    difficulty: "advanced",
+    minLevel: 35,
+    durationDays: 90,
+    dailyCommitmentMinutes: 40,
+    milestones: [
+      { day: 20, title_ar: "أسس التوازن الأربعة بدأت تترسخ", title_en: "The four balance foundations beginning to take root", reward: { xp: 50, badge: "بداية متوازنة" } },
+      { day: 45, title_ar: "نصف الرحلة، وتوازن ملموس بين الجوانب المختلفة", title_en: "Halfway through, with tangible balance across domains", reward: { xp: 60, badge: "توازن ناشئ" } },
+      { day: 70, title_ar: "معظم الرحلة اكتملت، والتوازن أصبح أسلوب حياة", title_en: "Most of the journey complete, balance becoming a lifestyle", reward: { xp: 70, badge: "أسلوب حياة" } },
+      { day: 90, title_ar: "تسعون يومًا من التوازن الصحي الشامل", title_en: "Ninety days of complete health balance", reward: { xp: 90, badge: "متوازن بالكامل" } },
+    ],
+    finalReward: { xp: 250, badge: "🏅 صاحب التوازن الصحي الشامل", title_ar: "المتوازن" },
+    icon: "⚖️",
+    successStories: [
+      "من ركّز على التوازن بدل الكمال في جانب واحد، وجد نتائج أثبت واستمرارية أطول",
+      "الجمع بين الجوانب الأربعة كان أصعب من التركيز على واحد، لكن الأثر كان أعمق بكثير",
+    ],
+  },
+  {
+    id: "project_endurance_goal_preparation",
+    title_ar: "مشروع الاستعداد لهدف التحمّل",
+    title_en: "Endurance Goal Preparation Project",
+    // Safety: يُشترط إشراف مختص لياقة أو طبي طوال هذه الرحلة لضمان السلامة
+    description_ar: "رحلة 90 يومًا للاستعداد المتدرج لهدف تحمّل بدني كبير، بإشراف مختص إلزامي طوال الرحلة",
+    description_en: "A 90-day journey of gradual preparation for a major endurance goal, with mandatory expert supervision throughout",
+    category: "health",
+    difficulty: "expert",
+    minLevel: 60,
+    durationDays: 90,
+    dailyCommitmentMinutes: 50,
+    milestones: [
+      { day: 20, title_ar: "مرحلة البناء الأساسي اكتملت بإشراف مختص", title_en: "The base-building phase completed under expert supervision", reward: { xp: 55, badge: "أساس آمن" } },
+      { day: 45, title_ar: "نصف الرحلة، وقدرة تحمّل أعلى بوضوح", title_en: "Halfway through, with clearly higher endurance capacity", reward: { xp: 70, badge: "تحمّل متنامٍ" } },
+      { day: 70, title_ar: "مرحلة الذروة التدريبية بإشراف مستمر", title_en: "Peak training phase under continued supervision", reward: { xp: 80, badge: "ذروة الاستعداد" } },
+      { day: 90, title_ar: "الاستعداد الكامل لهدف التحمّل تحت إشراف آمن", title_en: "Full readiness for the endurance goal achieved under safe supervision", reward: { xp: 95, badge: "جاهز للتحدي" } },
+    ],
+    finalReward: { xp: 260, badge: "🏅 صاحب الاستعداد الكامل للتحمّل", title_ar: "المتحمّل" },
+    icon: "🏅",
+    successStories: [
+      "من التزم بخطة مختص طوال الرحلة، وصل للهدف دون إصابات أوقفت زملاءه ممن تسرعوا",
+      "الإشراف المستمر منحه ثقة في التقدم الآمن، لا القلق من كل خطوة جديدة",
+    ],
+  },
+];

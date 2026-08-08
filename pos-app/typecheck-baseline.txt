@@ -1,0 +1,465 @@
+app/achievements/page.tsx(36,60): error TS2339: Property 'achievement_id' does not exist on type 'never'.
+app/achievements/page.tsx(37,22): error TS2339: Property 'xp' does not exist on type 'never'.
+app/achievements/page.tsx(38,37): error TS2339: Property 'current_streak' does not exist on type 'never'.
+app/achievements/page.tsx(38,76): error TS2339: Property 'longest_streak' does not exist on type 'never'.
+app/areas/area-list.tsx(39,17): error TS2353: Object literal may only specify known properties, and 'user_id' does not exist in type 'never[]'.
+app/areas/area-list.tsx(49,36): error TS2345: Argument of type 'SupabaseClient<Database, "public", { Tables: { tasks: { Row: { id: string; user_id: string; title: string; description: string | null; status: "todo" | "in_progress" | "done"; priority: "low" | "medium" | "high"; due_date: string | null; area_id: string | null; created_at: string; updated_at: string; }; Insert: { .....' is not assignable to parameter of type 'Client'.
+  Type '{ Tables: { tasks: { Row: { id: string; user_id: string; title: string; description: string | null; status: "todo" | "in_progress" | "done"; priority: "low" | "medium" | "high"; due_date: string | null; area_id: string | null; created_at: string; updated_at: string; }; Insert: { ...; }; Update: Partial<...>; }; ... ...' is not assignable to type '"public"'.
+app/areas/area-list.tsx(49,99): error TS2339: Property 'id' does not exist on type 'never'.
+app/areas/area-list.tsx(52,52): error TS2345: Argument of type 'SupabaseClient<Database, "public", { Tables: { tasks: { Row: { id: string; user_id: string; title: string; description: string | null; status: "todo" | "in_progress" | "done"; priority: "low" | "medium" | "high"; due_date: string | null; area_id: string | null; created_at: string; updated_at: string; }; Insert: { .....' is not assignable to parameter of type 'Client'.
+  Type '{ Tables: { tasks: { Row: { id: string; user_id: string; title: string; description: string | null; status: "todo" | "in_progress" | "done"; priority: "low" | "medium" | "high"; due_date: string | null; area_id: string | null; created_at: string; updated_at: string; }; Insert: { ...; }; Update: Partial<...>; }; ... ...' is not assignable to type '"public"'.
+app/calendar/calendar-view.tsx(113,17): error TS2353: Object literal may only specify known properties, and 'user_id' does not exist in type 'never[]'.
+app/dashboard/page.tsx(71,30): error TS2339: Property 'onboarded' does not exist on type 'never'.
+app/dashboard/page.tsx(97,77): error TS2339: Property 'habit_id' does not exist on type 'never'.
+app/dashboard/page.tsx(103,50): error TS2339: Property 'due_date' does not exist on type 'never'.
+app/dashboard/page.tsx(103,73): error TS2339: Property 'due_date' does not exist on type 'never'.
+app/dashboard/page.tsx(111,18): error TS2339: Property 'steps' does not exist on type 'never'.
+app/dashboard/page.tsx(111,40): error TS2339: Property 'steps' does not exist on type 'never'.
+app/dashboard/page.tsx(111,52): error TS7006: Parameter 's' implicitly has an 'any' type.
+app/dashboard/page.tsx(115,24): error TS2339: Property 'full_name' does not exist on type 'never'.
+app/dashboard/page.tsx(117,67): error TS2339: Property 'id' does not exist on type 'never'.
+app/habits/habit-list.tsx(83,17): error TS2353: Object literal may only specify known properties, and 'user_id' does not exist in type 'never[]'.
+app/habits/habit-list.tsx(106,9): error TS2353: Object literal may only specify known properties, and 'habit_id' does not exist in type 'never[]'.
+app/habits/habit-list.tsx(113,36): error TS2345: Argument of type 'SupabaseClient<Database, "public", { Tables: { tasks: { Row: { id: string; user_id: string; title: string; description: string | null; status: "todo" | "in_progress" | "done"; priority: "low" | "medium" | "high"; due_date: string | null; area_id: string | null; created_at: string; updated_at: string; }; Insert: { .....' is not assignable to parameter of type 'Client'.
+  Type '{ Tables: { tasks: { Row: { id: string; user_id: string; title: string; description: string | null; status: "todo" | "in_progress" | "done"; priority: "low" | "medium" | "high"; due_date: string | null; area_id: string | null; created_at: string; updated_at: string; }; Insert: { ...; }; Update: Partial<...>; }; ... ...' is not assignable to type '"public"'.
+app/habits/habit-list.tsx(116,52): error TS2345: Argument of type 'SupabaseClient<Database, "public", { Tables: { tasks: { Row: { id: string; user_id: string; title: string; description: string | null; status: "todo" | "in_progress" | "done"; priority: "low" | "medium" | "high"; due_date: string | null; area_id: string | null; created_at: string; updated_at: string; }; Insert: { .....' is not assignable to parameter of type 'Client'.
+  Type '{ Tables: { tasks: { Row: { id: string; user_id: string; title: string; description: string | null; status: "todo" | "in_progress" | "done"; priority: "low" | "medium" | "high"; due_date: string | null; area_id: string | null; created_at: string; updated_at: string; }; Insert: { ...; }; Update: Partial<...>; }; ... ...' is not assignable to type '"public"'.
+app/habits/page.tsx(30,46): error TS2339: Property 'habit_id' does not exist on type 'never'.
+app/knowledge/knowledge-base.tsx(86,17): error TS2345: Argument of type '{ title: string; body: string; tags: string[]; }' is not assignable to parameter of type 'never'.
+app/knowledge/knowledge-base.tsx(97,19): error TS2353: Object literal may only specify known properties, and 'user_id' does not exist in type 'never[]'.
+app/knowledge/knowledge-base.tsx(104,49): error TS2345: Argument of type 'SupabaseClient<Database, "public", { Tables: { tasks: { Row: { id: string; user_id: string; title: string; description: string | null; status: "todo" | "in_progress" | "done"; priority: "low" | "medium" | "high"; due_date: string | null; area_id: string | null; created_at: string; updated_at: string; }; Insert: { .....' is not assignable to parameter of type 'Client'.
+  Type '{ Tables: { tasks: { Row: { id: string; user_id: string; title: string; description: string | null; status: "todo" | "in_progress" | "done"; priority: "low" | "medium" | "high"; due_date: string | null; area_id: string | null; created_at: string; updated_at: string; }; Insert: { ...; }; Update: Partial<...>; }; ... ...' is not assignable to type '"public"'.
+app/library/library-browser.tsx(101,7): error TS2353: Object literal may only specify known properties, and 'user_id' does not exist in type 'never[]'.
+app/library/library-browser.tsx(116,7): error TS2353: Object literal may only specify known properties, and 'user_id' does not exist in type 'never[]'.
+app/library/library-browser.tsx(127,17): error TS2353: Object literal may only specify known properties, and 'user_id' does not exist in type 'never[]'.
+app/library/library-browser.tsx(130,77): error TS2339: Property 'started_at' does not exist on type 'never'.
+app/library/page.tsx(26,47): error TS2339: Property 'project_id' does not exist on type 'never'.
+app/library/page.tsx(26,65): error TS2339: Property 'started_at' does not exist on type 'never'.
+app/notes/note-list.tsx(45,17): error TS2353: Object literal may only specify known properties, and 'user_id' does not exist in type 'never[]'.
+app/notes/note-list.tsx(55,36): error TS2345: Argument of type 'SupabaseClient<Database, "public", { Tables: { tasks: { Row: { id: string; user_id: string; title: string; description: string | null; status: "todo" | "in_progress" | "done"; priority: "low" | "medium" | "high"; due_date: string | null; area_id: string | null; created_at: string; updated_at: string; }; Insert: { .....' is not assignable to parameter of type 'Client'.
+  Type '{ Tables: { tasks: { Row: { id: string; user_id: string; title: string; description: string | null; status: "todo" | "in_progress" | "done"; priority: "low" | "medium" | "high"; due_date: string | null; area_id: string | null; created_at: string; updated_at: string; }; Insert: { ...; }; Update: Partial<...>; }; ... ...' is not assignable to type '"public"'.
+app/notes/note-list.tsx(55,99): error TS2339: Property 'id' does not exist on type 'never'.
+app/notes/note-list.tsx(78,15): error TS2345: Argument of type '{ title: string; content: string; }' is not assignable to parameter of type 'never'.
+app/notifications/notification-list.tsx(31,67): error TS2345: Argument of type '{ read: boolean; }' is not assignable to parameter of type 'never'.
+app/notifications/notification-list.tsx(38,67): error TS2345: Argument of type '{ read: boolean; }' is not assignable to parameter of type 'never'.
+app/onboarding/onboarding-flow.tsx(43,15): error TS2345: Argument of type '{ full_name: string | null; onboarded: boolean; }' is not assignable to parameter of type 'never'.
+app/onboarding/onboarding-flow.tsx(48,9): error TS2345: Argument of type '{ user_id: string; name: string; color: string; }[]' is not assignable to parameter of type 'never[]'.
+  Type '{ user_id: string; name: string; color: string; }' is not assignable to type 'never'.
+app/onboarding/onboarding-flow.tsx(57,7): error TS2353: Object literal may only specify known properties, and 'user_id' does not exist in type 'never[]'.
+app/onboarding/page.tsx(24,19): error TS2339: Property 'onboarded' does not exist on type 'never'.
+app/reviews/review-list.tsx(88,17): error TS2353: Object literal may only specify known properties, and 'user_id' does not exist in type 'never[]'.
+app/reviews/review-list.tsx(106,36): error TS2345: Argument of type 'SupabaseClient<Database, "public", { Tables: { tasks: { Row: { id: string; user_id: string; title: string; description: string | null; status: "todo" | "in_progress" | "done"; priority: "low" | "medium" | "high"; due_date: string | null; area_id: string | null; created_at: string; updated_at: string; }; Insert: { .....' is not assignable to parameter of type 'Client'.
+  Type '{ Tables: { tasks: { Row: { id: string; user_id: string; title: string; description: string | null; status: "todo" | "in_progress" | "done"; priority: "low" | "medium" | "high"; due_date: string | null; area_id: string | null; created_at: string; updated_at: string; }; Insert: { ...; }; Update: Partial<...>; }; ... ...' is not assignable to type '"public"'.
+app/reviews/review-list.tsx(106,103): error TS2339: Property 'id' does not exist on type 'never'.
+app/reviews/review-list.tsx(109,52): error TS2345: Argument of type 'SupabaseClient<Database, "public", { Tables: { tasks: { Row: { id: string; user_id: string; title: string; description: string | null; status: "todo" | "in_progress" | "done"; priority: "low" | "medium" | "high"; due_date: string | null; area_id: string | null; created_at: string; updated_at: string; }; Insert: { .....' is not assignable to parameter of type 'Client'.
+  Type '{ Tables: { tasks: { Row: { id: string; user_id: string; title: string; description: string | null; status: "todo" | "in_progress" | "done"; priority: "low" | "medium" | "high"; due_date: string | null; area_id: string | null; created_at: string; updated_at: string; }; Insert: { ...; }; Update: Partial<...>; }; ... ...' is not assignable to type '"public"'.
+app/routines/routine-list.tsx(89,17): error TS2353: Object literal may only specify known properties, and 'user_id' does not exist in type 'never[]'.
+app/routines/routine-list.tsx(106,15): error TS2345: Argument of type '{ steps: RoutineStep[]; }' is not assignable to parameter of type 'never'.
+app/routines/routine-list.tsx(116,38): error TS2345: Argument of type 'SupabaseClient<Database, "public", { Tables: { tasks: { Row: { id: string; user_id: string; title: string; description: string | null; status: "todo" | "in_progress" | "done"; priority: "low" | "medium" | "high"; due_date: string | null; area_id: string | null; created_at: string; updated_at: string; }; Insert: { .....' is not assignable to parameter of type 'Client'.
+  Type '{ Tables: { tasks: { Row: { id: string; user_id: string; title: string; description: string | null; status: "todo" | "in_progress" | "done"; priority: "low" | "medium" | "high"; due_date: string | null; area_id: string | null; created_at: string; updated_at: string; }; Insert: { ...; }; Update: Partial<...>; }; ... ...' is not assignable to type '"public"'.
+app/routines/routine-list.tsx(119,54): error TS2345: Argument of type 'SupabaseClient<Database, "public", { Tables: { tasks: { Row: { id: string; user_id: string; title: string; description: string | null; status: "todo" | "in_progress" | "done"; priority: "low" | "medium" | "high"; due_date: string | null; area_id: string | null; created_at: string; updated_at: string; }; Insert: { .....' is not assignable to parameter of type 'Client'.
+  Type '{ Tables: { tasks: { Row: { id: string; user_id: string; title: string; description: string | null; status: "todo" | "in_progress" | "done"; priority: "low" | "medium" | "high"; due_date: string | null; area_id: string | null; created_at: string; updated_at: string; }; Insert: { ...; }; Update: Partial<...>; }; ... ...' is not assignable to type '"public"'.
+app/routines/routine-list.tsx(134,62): error TS2345: Argument of type '{ steps: { done: boolean; id: string; label: string; }[]; }' is not assignable to parameter of type 'never'.
+app/search/page.tsx(31,93): error TS2339: Property 'title' does not exist on type 'never'.
+app/search/page.tsx(31,111): error TS2339: Property 'description' does not exist on type 'never'.
+app/search/page.tsx(32,93): error TS2339: Property 'title' does not exist on type 'never'.
+app/search/page.tsx(32,111): error TS2339: Property 'content' does not exist on type 'never'.
+app/search/page.tsx(33,99): error TS2339: Property 'title' does not exist on type 'never'.
+app/search/page.tsx(33,120): error TS2339: Property 'body' does not exist on type 'never'.
+app/search/page.tsx(33,130): error TS2339: Property 'tags' does not exist on type 'never'.
+app/search/page.tsx(34,98): error TS2339: Property 'title' does not exist on type 'never'.
+app/search/page.tsx(34,116): error TS2339: Property 'starts_at' does not exist on type 'never'.
+app/search/page.tsx(35,93): error TS2339: Property 'name' does not exist on type 'never'.
+app/search/page.tsx(35,110): error TS2339: Property 'description' does not exist on type 'never'.
+app/settings/page.tsx(31,28): error TS2339: Property 'full_name' does not exist on type 'never'.
+app/settings/page.tsx(32,26): error TS2339: Property 'theme' does not exist on type 'never'.
+app/settings/settings-panel.tsx(75,15): error TS2345: Argument of type '{ full_name: string | null; theme: Theme; }' is not assignable to parameter of type 'never'.
+app/statistics/page.tsx(45,50): error TS2339: Property 'status' does not exist on type 'never'.
+app/statistics/page.tsx(49,54): error TS2339: Property 'logged_on' does not exist on type 'never'.
+app/statistics/page.tsx(49,77): error TS2339: Property 'logged_on' does not exist on type 'never'.
+app/statistics/page.tsx(54,57): error TS2339: Property 'rating' does not exist on type 'never'.
+app/tasks/task-list.tsx(66,17): error TS2353: Object literal may only specify known properties, and 'user_id' does not exist in type 'never[]'.
+app/tasks/task-list.tsx(80,15): error TS2345: Argument of type '{ status: string; }' is not assignable to parameter of type 'never'.
+app/tasks/task-list.tsx(89,38): error TS2345: Argument of type 'SupabaseClient<Database, "public", { Tables: { tasks: { Row: { id: string; user_id: string; title: string; description: string | null; status: "todo" | "in_progress" | "done"; priority: "low" | "medium" | "high"; due_date: string | null; area_id: string | null; created_at: string; updated_at: string; }; Insert: { .....' is not assignable to parameter of type 'Client'.
+  Type '{ Tables: { tasks: { Row: { id: string; user_id: string; title: string; description: string | null; status: "todo" | "in_progress" | "done"; priority: "low" | "medium" | "high"; due_date: string | null; area_id: string | null; created_at: string; updated_at: string; }; Insert: { ...; }; Update: Partial<...>; }; ... ...' is not assignable to type '"public"'.
+app/tasks/task-list.tsx(93,54): error TS2345: Argument of type 'SupabaseClient<Database, "public", { Tables: { tasks: { Row: { id: string; user_id: string; title: string; description: string | null; status: "todo" | "in_progress" | "done"; priority: "low" | "medium" | "high"; due_date: string | null; area_id: string | null; created_at: string; updated_at: string; }; Insert: { .....' is not assignable to parameter of type 'Client'.
+  Type '{ Tables: { tasks: { Row: { id: string; user_id: string; title: string; description: string | null; status: "todo" | "in_progress" | "done"; priority: "low" | "medium" | "high"; due_date: string | null; area_id: string | null; created_at: string; updated_at: string; }; Insert: { ...; }; Update: Partial<...>; }; ... ...' is not assignable to type '"public"'.
+app/tasks/task-list.tsx(94,52): error TS2345: Argument of type 'SupabaseClient<Database, "public", { Tables: { tasks: { Row: { id: string; user_id: string; title: string; description: string | null; status: "todo" | "in_progress" | "done"; priority: "low" | "medium" | "high"; due_date: string | null; area_id: string | null; created_at: string; updated_at: string; }; Insert: { .....' is not assignable to parameter of type 'Client'.
+  Type '{ Tables: { tasks: { Row: { id: string; user_id: string; title: string; description: string | null; status: "todo" | "in_progress" | "done"; priority: "low" | "medium" | "high"; due_date: string | null; area_id: string | null; created_at: string; updated_at: string; }; Insert: { ...; }; Update: Partial<...>; }; ... ...' is not assignable to type '"public"'.
+app/tasks/task-list.tsx(95,54): error TS2345: Argument of type 'SupabaseClient<Database, "public", { Tables: { tasks: { Row: { id: string; user_id: string; title: string; description: string | null; status: "todo" | "in_progress" | "done"; priority: "low" | "medium" | "high"; due_date: string | null; area_id: string | null; created_at: string; updated_at: string; }; Insert: { .....' is not assignable to parameter of type 'Client'.
+  Type '{ Tables: { tasks: { Row: { id: string; user_id: string; title: string; description: string | null; status: "todo" | "in_progress" | "done"; priority: "low" | "medium" | "high"; due_date: string | null; area_id: string | null; created_at: string; updated_at: string; }; Insert: { ...; }; Update: Partial<...>; }; ... ...' is not assignable to type '"public"'.
+components/gamification/gamification-context.tsx(95,18): error TS2339: Property 'xp' does not exist on type 'never'.
+components/gamification/gamification-context.tsx(96,29): error TS2339: Property 'current_streak' does not exist on type 'never'.
+components/gamification/gamification-context.tsx(97,29): error TS2339: Property 'longest_streak' does not exist on type 'never'.
+components/gamification/gamification-context.tsx(98,38): error TS2339: Property 'streak_freezes_available' does not exist on type 'never'.
+components/garden/history-recorder.tsx(50,11): error TS2353: Object literal may only specify known properties, and 'user_id' does not exist in type 'never[]'.
+components/settings/daily-goal-selector.tsx(43,15): error TS2345: Argument of type '{ daily_goal_level: DailyGoalLevel; }' is not assignable to parameter of type 'never'.
+components/settings/support-partner.tsx(50,42): error TS2345: Argument of type '{ target_user_id: string; }' is not assignable to parameter of type 'undefined'.
+components/settings/support-partner.tsx(60,17): error TS2353: Object literal may only specify known properties, and 'user_id' does not exist in type 'never[]'.
+components/settings/support-partner.tsx(75,15): error TS2345: Argument of type '{ status: "accepted" | "declined"; }' is not assignable to parameter of type 'never'.
+components/today/niyyah-card.tsx(35,24): error TS2339: Property 'text' does not exist on type 'never'.
+components/today/niyyah-card.tsx(47,11): error TS2353: Object literal may only specify known properties, and 'user_id' does not exist in type 'never[]'.
+lib/gamification.ts(97,40): error TS2339: Property 'xp' does not exist on type 'never'.
+lib/gamification.ts(103,27): error TS2339: Property 'current_streak' does not exist on type 'never'.
+lib/gamification.ts(106,37): error TS2339: Property 'streak_freezes_available' does not exist on type 'never'.
+lib/gamification.ts(107,15): error TS2339: Property 'last_activity_date' does not exist on type 'never'.
+lib/gamification.ts(112,17): error TS2339: Property 'last_activity_date' does not exist on type 'never'.
+lib/gamification.ts(113,27): error TS2339: Property 'current_streak' does not exist on type 'never'.
+lib/gamification.ts(115,45): error TS2339: Property 'last_activity_date' does not exist on type 'never'.
+lib/gamification.ts(117,59): error TS2339: Property 'last_activity_date' does not exist on type 'never'.
+lib/gamification.ts(122,62): error TS2339: Property 'streak_freezes_available' does not exist on type 'never'.
+lib/gamification.ts(123,29): error TS2339: Property 'current_streak' does not exist on type 'never'.
+lib/gamification.ts(124,53): error TS2339: Property 'streak_freezes_available' does not exist on type 'never'.
+lib/gamification.ts(132,39): error TS2339: Property 'longest_streak' does not exist on type 'never'.
+lib/gamification.ts(133,25): error TS2339: Property 'xp' does not exist on type 'never'.
+lib/gamification.ts(138,13): error TS2345: Argument of type '{ xp: any; current_streak: any; longest_streak: number; last_activity_date: string; streak_freezes_available: any; }' is not assignable to parameter of type 'never'.
+lib/gamification.ts(148,5): error TS2353: Object literal may only specify known properties, and 'user_id' does not exist in type 'never[]'.
+lib/gamification.ts(161,28): error TS2339: Property 'locale' does not exist on type 'never'.
+lib/gamification.ts(163,7): error TS2353: Object literal may only specify known properties, and 'user_id' does not exist in type 'never[]'.
+lib/gamification.ts(197,68): error TS2339: Property 'achievement_id' does not exist on type 'never'.
+lib/gamification.ts(219,17): error TS2353: Object literal may only specify known properties, and 'user_id' does not exist in type 'never[]'.
+lib/gamification.ts(219,54): error TS2339: Property 'id' does not exist on type 'never'.
+lib/gamification.ts(222,15): error TS2339: Property 'xp_reward' does not exist on type 'never'.
+lib/gamification.ts(225,19): error TS2345: Argument of type '{ xp: any; }' is not assignable to parameter of type 'never'.
+lib/gamification.ts(225,70): error TS2339: Property 'xp_reward' does not exist on type 'never'.
+lib/gamification.ts(228,11): error TS2353: Object literal may only specify known properties, and 'user_id' does not exist in type 'never[]'.
+lib/gamification.ts(229,23): error TS2339: Property 'xp_reward' does not exist on type 'never'.
+lib/gamification.ts(230,39): error TS2339: Property 'title' does not exist on type 'never'.
+lib/gamification.ts(232,26): error TS2339: Property 'id' does not exist on type 'never'.
+lib/gamification.ts(237,43): error TS2339: Property 'id' does not exist on type 'never'.
+lib/gamification.ts(241,19): error TS2345: Argument of type '{ streak_freezes_available: number; }' is not assignable to parameter of type 'never'.
+lib/gamification.ts(251,16): error TS2339: Property 'xp' does not exist on type 'never'.
+lib/gamification.ts(260,16): error TS2339: Property 'streak_freezes_available' does not exist on type 'never'.
+lib/gamification.ts(293,15): error TS2353: Object literal may only specify known properties, and 'user_id' does not exist in type 'never[]'.
+lib/gamification.ts(296,11): error TS2339: Property 'xp_reward' does not exist on type 'never'.
+lib/gamification.ts(298,44): error TS2345: Argument of type '{ xp: any; }' is not assignable to parameter of type 'never'.
+lib/gamification.ts(298,66): error TS2339: Property 'xp_reward' does not exist on type 'never'.
+lib/gamification.ts(300,7): error TS2353: Object literal may only specify known properties, and 'user_id' does not exist in type 'never[]'.
+lib/gamification.ts(301,19): error TS2339: Property 'xp_reward' does not exist on type 'never'.
+lib/gamification.ts(302,35): error TS2339: Property 'title' does not exist on type 'never'.
+lib/gamification.ts(304,22): error TS2339: Property 'id' does not exist on type 'never'.
+lib/i18n/dictionaries/ar.ts(10,5): error TS2322: Type '"حفظ"' is not assignable to type '"Save"'.
+lib/i18n/dictionaries/ar.ts(11,5): error TS2322: Type '"إلغاء"' is not assignable to type '"Cancel"'.
+lib/i18n/dictionaries/ar.ts(12,5): error TS2322: Type '"حذف"' is not assignable to type '"Delete"'.
+lib/i18n/dictionaries/ar.ts(13,5): error TS2322: Type '"تعديل"' is not assignable to type '"Edit"'.
+lib/i18n/dictionaries/ar.ts(14,5): error TS2322: Type '"إضافة"' is not assignable to type '"Add"'.
+lib/i18n/dictionaries/ar.ts(15,5): error TS2322: Type '"إغلاق"' is not assignable to type '"Close"'.
+lib/i18n/dictionaries/ar.ts(16,5): error TS2322: Type '"جارٍ التحميل..."' is not assignable to type '"Loading..."'.
+lib/i18n/dictionaries/ar.ts(17,5): error TS2322: Type '"بحث"' is not assignable to type '"Search"'.
+lib/i18n/dictionaries/ar.ts(18,5): error TS2322: Type '"تأكيد"' is not assignable to type '"Confirm"'.
+lib/i18n/dictionaries/ar.ts(19,5): error TS2322: Type '"رجوع"' is not assignable to type '"Back"'.
+lib/i18n/dictionaries/ar.ts(20,5): error TS2322: Type '"التالي"' is not assignable to type '"Next"'.
+lib/i18n/dictionaries/ar.ts(21,5): error TS2322: Type '"إنهاء"' is not assignable to type '"Finish"'.
+lib/i18n/dictionaries/ar.ts(22,5): error TS2322: Type '"اختياري"' is not assignable to type '"Optional"'.
+lib/i18n/dictionaries/ar.ts(23,5): error TS2322: Type '"اليوم"' is not assignable to type '"Today"'.
+lib/i18n/dictionaries/ar.ts(24,5): error TS2322: Type '"حاول مجددًا"' is not assignable to type '"Try again"'.
+lib/i18n/dictionaries/ar.ts(25,5): error TS2322: Type '"حذف نهائيًا؟"' is not assignable to type '"Delete permanently?"'.
+lib/i18n/dictionaries/ar.ts(26,5): error TS2322: Type '"لا يمكن التراجع عن هذا الإجراء."' is not assignable to type '"This action can't be undone."'.
+lib/i18n/dictionaries/ar.ts(27,5): error TS2322: Type '"تم الحفظ"' is not assignable to type '"Saved"'.
+lib/i18n/dictionaries/ar.ts(30,5): error TS2322: Type '"لوحة التحكم"' is not assignable to type '"Dashboard"'.
+lib/i18n/dictionaries/ar.ts(31,5): error TS2322: Type '"المهام"' is not assignable to type '"Tasks"'.
+lib/i18n/dictionaries/ar.ts(32,5): error TS2322: Type '"الملاحظات"' is not assignable to type '"Notes"'.
+lib/i18n/dictionaries/ar.ts(33,5): error TS2322: Type '"العادات"' is not assignable to type '"Habits"'.
+lib/i18n/dictionaries/ar.ts(34,5): error TS2322: Type '"الروتين"' is not assignable to type '"Routines"'.
+lib/i18n/dictionaries/ar.ts(35,5): error TS2322: Type '"التقويم"' is not assignable to type '"Calendar"'.
+lib/i18n/dictionaries/ar.ts(36,5): error TS2322: Type '"الإنجازات"' is not assignable to type '"Achievements"'.
+lib/i18n/dictionaries/ar.ts(37,5): error TS2322: Type '"مجالات الحياة"' is not assignable to type '"Life Areas"'.
+lib/i18n/dictionaries/ar.ts(38,5): error TS2322: Type '"المراجعات"' is not assignable to type '"Reviews"'.
+lib/i18n/dictionaries/ar.ts(39,5): error TS2322: Type '"قاعدة المعرفة"' is not assignable to type '"Knowledge"'.
+lib/i18n/dictionaries/ar.ts(40,5): error TS2322: Type '"الإحصائيات"' is not assignable to type '"Statistics"'.
+lib/i18n/dictionaries/ar.ts(41,5): error TS2322: Type '"بحث"' is not assignable to type '"Search"'.
+lib/i18n/dictionaries/ar.ts(42,5): error TS2322: Type '"الإعدادات"' is not assignable to type '"Settings"'.
+lib/i18n/dictionaries/ar.ts(43,5): error TS2322: Type '"الإشعارات"' is not assignable to type '"Notifications"'.
+lib/i18n/dictionaries/ar.ts(44,5): error TS2322: Type '"تسجيل الخروج"' is not assignable to type '"Sign out"'.
+lib/i18n/dictionaries/ar.ts(45,5): error TS2322: Type '"الرئيسية"' is not assignable to type '"Home"'.
+lib/i18n/dictionaries/ar.ts(46,5): error TS2322: Type '"المزيد"' is not assignable to type '"More"'.
+lib/i18n/dictionaries/ar.ts(48,5): error TS2322: Type '"المكتبة"' is not assignable to type '"Library"'.
+lib/i18n/dictionaries/ar.ts(49,5): error TS2322: Type '"المزيد"' is not assignable to type '"More"'.
+lib/i18n/dictionaries/ar.ts(52,5): error TS2322: Type '"تسجيل الدخول"' is not assignable to type '"Sign in"'.
+lib/i18n/dictionaries/ar.ts(53,5): error TS2322: Type '"إنشاء حساب"' is not assignable to type '"Sign up"'.
+lib/i18n/dictionaries/ar.ts(54,5): error TS2322: Type '"البريد الإلكتروني"' is not assignable to type '"Email"'.
+lib/i18n/dictionaries/ar.ts(55,5): error TS2322: Type '"كلمة المرور"' is not assignable to type '"Password"'.
+lib/i18n/dictionaries/ar.ts(56,5): error TS2322: Type '"ليس لديك حساب؟"' is not assignable to type '"No account?"'.
+lib/i18n/dictionaries/ar.ts(57,5): error TS2322: Type '"أنشئ واحدًا"' is not assignable to type '"Create one"'.
+lib/i18n/dictionaries/ar.ts(58,5): error TS2322: Type '"لديك حساب بالفعل؟"' is not assignable to type '"Already have an account?"'.
+lib/i18n/dictionaries/ar.ts(59,5): error TS2322: Type '"جارٍ تسجيل الدخول..."' is not assignable to type '"Signing in..."'.
+lib/i18n/dictionaries/ar.ts(60,5): error TS2322: Type '"إنشاء حساب"' is not assignable to type '"Create account"'.
+lib/i18n/dictionaries/ar.ts(61,5): error TS2322: Type '"جارٍ إنشاء الحساب..."' is not assignable to type '"Creating account..."'.
+lib/i18n/dictionaries/ar.ts(62,5): error TS2322: Type '"تحقّق من بريدك"' is not assignable to type '"Check your inbox"'.
+lib/i18n/dictionaries/ar.ts(63,5): error TS2322: Type '"أرسلنا رابط تأكيد إلى {email}. أكّد بريدك لإتمام إنشاء حسابك."' is not assignable to type '"We sent a confirmation link to {email}. Confirm your email to finish creating your account."'.
+lib/i18n/dictionaries/ar.ts(64,5): error TS2322: Type '"العودة لتسجيل الدخول"' is not assignable to type '"Back to sign in"'.
+lib/i18n/dictionaries/ar.ts(67,5): error TS2322: Type '"الإعدادات"' is not assignable to type '"Settings"'.
+lib/i18n/dictionaries/ar.ts(68,5): error TS2322: Type '"الحساب"' is not assignable to type '"Account"'.
+lib/i18n/dictionaries/ar.ts(69,5): error TS2322: Type '"الملف الشخصي"' is not assignable to type '"Profile"'.
+lib/i18n/dictionaries/ar.ts(70,5): error TS2322: Type '"الاسم المعروض"' is not assignable to type '"Display name"'.
+lib/i18n/dictionaries/ar.ts(71,5): error TS2322: Type '"السمة"' is not assignable to type '"Theme"'.
+lib/i18n/dictionaries/ar.ts(72,5): error TS2322: Type '"اللغة"' is not assignable to type '"Language"'.
+lib/i18n/dictionaries/ar.ts(73,5): error TS2322: Type '"الهدف اليومي"' is not assignable to type '"Daily goal"'.
+lib/i18n/dictionaries/ar.ts(74,5): error TS2322: Type '"كم تريد أن تطمح كل يوم؟"' is not assignable to type '"How much do you want to aim for each day?"'.
+lib/i18n/dictionaries/ar.ts(75,5): error TS2322: Type '"خفيف"' is not assignable to type '"Light"'.
+lib/i18n/dictionaries/ar.ts(76,5): error TS2322: Type '"متوسط"' is not assignable to type '"Medium"'.
+lib/i18n/dictionaries/ar.ts(77,5): error TS2322: Type '"طموح"' is not assignable to type '"Ambitious"'.
+lib/i18n/dictionaries/ar.ts(78,5): error TS2322: Type '"تم الحفظ"' is not assignable to type '"Saved"'.
+lib/i18n/dictionaries/ar.ts(79,5): error TS2322: Type '"تعذّر الحفظ — حاول مجددًا"' is not assignable to type '"Couldn't save — try again"'.
+lib/i18n/dictionaries/ar.ts(80,5): error TS2322: Type '"النسخ الاحتياطي والبيانات"' is not assignable to type '"Backup & data"'.
+lib/i18n/dictionaries/ar.ts(81,5): error TS2322: Type '"صدّر نسخة كاملة من بياناتك بصيغة JSON، أو استعد نسخة سابقة. الاستيراد إضافي — لن يستبدل السجلّات الموجودة."' is not assignable to type '"Export a full JSON backup of your data, or restore from one. Import is additive — it won't overwrite existing records."'.
+lib/i18n/dictionaries/ar.ts(82,5): error TS2322: Type '"تصدير نسخة احتياطية"' is not assignable to type '"Export backup"'.
+lib/i18n/dictionaries/ar.ts(83,5): error TS2322: Type '"استيراد نسخة احتياطية"' is not assignable to type '"Import backup"'.
+lib/i18n/dictionaries/ar.ts(84,5): error TS2322: Type '"حفظ الملف الشخصي"' is not assignable to type '"Save profile"'.
+lib/i18n/dictionaries/ar.ts(85,5): error TS2322: Type '"تم الحفظ."' is not assignable to type '"Saved."'.
+lib/i18n/dictionaries/ar.ts(86,5): error TS2322: Type '"البريد الإلكتروني"' is not assignable to type '"Email"'.
+lib/i18n/dictionaries/ar.ts(87,5): error TS2322: Type '"معرّف المستخدم"' is not assignable to type '"User ID"'.
+lib/i18n/dictionaries/ar.ts(88,5): error TS2322: Type '"النظام"' is not assignable to type '"System"'.
+lib/i18n/dictionaries/ar.ts(89,5): error TS2322: Type '"فاتح"' is not assignable to type '"Light"'.
+lib/i18n/dictionaries/ar.ts(90,5): error TS2322: Type '"داكن"' is not assignable to type '"Dark"'.
+lib/i18n/dictionaries/ar.ts(91,5): error TS2322: Type '"اسمك"' is not assignable to type '"Your name"'.
+lib/i18n/dictionaries/ar.ts(92,5): error TS2322: Type '"فشل الاستيراد."' is not assignable to type '"Import failed."'.
+lib/i18n/dictionaries/ar.ts(93,5): error TS2322: Type '"تم استيراد {count} سجلًا. أعد التحميل لرؤيتها."' is not assignable to type '"Imported {count} records. Refresh to see them."'.
+lib/i18n/dictionaries/ar.ts(94,5): error TS2322: Type '"شريك الدعم"' is not assignable to type '"Support Partner"'.
+lib/i18n/dictionaries/ar.ts(95,5): error TS2322: Type '"شريك واحد اختياري يرى فقط هل نشطت اليوم أم لا — لا شيء آخر. لا لوحة صدارة، لا منافسة."' is not assignable to type '"One optional partner who can see only whether you were active today — nothing else. No leaderboard, no competition."'.
+lib/i18n/dictionaries/ar.ts(96,5): error TS2322: Type '"معرّف مستخدم الشريك"' is not assignable to type '"Partner's user ID"'.
+lib/i18n/dictionaries/ar.ts(97,5): error TS2322: Type '"أرسل دعوة"' is not assignable to type '"Send invite"'.
+lib/i18n/dictionaries/ar.ts(98,5): error TS2322: Type '"لديك دعوة معلَّقة"' is not assignable to type '"You have a pending invite"'.
+lib/i18n/dictionaries/ar.ts(99,5): error TS2322: Type '"بانتظار موافقة شريكك"' is not assignable to type '"Waiting for your partner to accept"'.
+lib/i18n/dictionaries/ar.ts(100,5): error TS2322: Type '"نشط اليوم"' is not assignable to type '"Active today"'.
+lib/i18n/dictionaries/ar.ts(101,5): error TS2322: Type '"هادئ اليوم"' is not assignable to type '"Quiet today"'.
+lib/i18n/dictionaries/ar.ts(102,5): error TS2322: Type '"عالمك"' is not assignable to type '"Your world"'.
+lib/i18n/dictionaries/ar.ts(103,5): error TS2322: Type '"وصول سريع"' is not assignable to type '"Quick access"'.
+lib/i18n/dictionaries/ar.ts(106,5): error TS2322: Type '"المستوى"' is not assignable to type '"Level"'.
+lib/i18n/dictionaries/ar.ts(107,5): error TS2322: Type '"نقاط الخبرة"' is not assignable to type '"XP"'.
+lib/i18n/dictionaries/ar.ts(108,5): error TS2322: Type '"السلسلة"' is not assignable to type '"Streak"'.
+lib/i18n/dictionaries/ar.ts(109,5): error TS2322: Type '"يوم متتالٍ"' is not assignable to type '"day streak"'.
+lib/i18n/dictionaries/ar.ts(110,5): error TS2322: Type '"إنجاز جديد"' is not assignable to type '"Achievement unlocked"'.
+lib/i18n/dictionaries/ar.ts(111,5): error TS2322: Type '"ترقية مستوى"' is not assignable to type '"Leveled up"'.
+lib/i18n/dictionaries/ar.ts(112,5): error TS2322: Type '"{count} تجميد سلسلة متاح"' is not assignable to type '"{count} streak freeze available"'.
+lib/i18n/dictionaries/ar.ts(113,5): error TS2322: Type '"استُخدم تجميد السلسلة"' is not assignable to type '"Streak freeze used"'.
+lib/i18n/dictionaries/ar.ts(114,5): error TS2322: Type '"فاتك يوم، لكن تجميدًا حمى سلسلتك ({streak} يومًا)."' is not assignable to type '"You missed a day, but a freeze protected your {streak}-day streak."'.
+lib/i18n/dictionaries/ar.ts(118,7): error TS2322: Type '"لديك {count} مهام متأخرة"' is not assignable to type '"You have {count} overdue tasks"'.
+lib/i18n/dictionaries/ar.ts(119,7): error TS2322: Type '"إنجازها أولًا سيُخفّف بقية يومك."' is not assignable to type '"Clearing these first will lighten the rest of your day."'.
+lib/i18n/dictionaries/ar.ts(122,7): error TS2322: Type '"مجال واحد فيه {count} مهام متأخرة"' is not assignable to type '"One area has {count} overdue tasks"'.
+lib/i18n/dictionaries/ar.ts(123,7): error TS2322: Type '"هذا المجال يحتاج انتباهًا قبل أن يتراكم أكثر."' is not assignable to type '"This area needs attention before it piles up further."'.
+lib/i18n/dictionaries/ar.ts(126,7): error TS2322: Type '"وقت مناسب لـ {habitName}"' is not assignable to type '"Good time for {habitName}"'.
+lib/i18n/dictionaries/ar.ts(127,7): error TS2322: Type '"عادةً تُكمل هذه العادة في الصباح — الآن وقت جيد."' is not assignable to type '"You usually complete this habit in the morning — now's a good moment."'.
+lib/i18n/dictionaries/ar.ts(130,7): error TS2322: Type '"{habitName} هادئة منذ فترة"' is not assignable to type '"{habitName} has been quiet lately"'.
+lib/i18n/dictionaries/ar.ts(131,7): error TS2322: Type '"لا تسجيل منذ {days} أيام. بداية صغيرة تُعيدها للحياة."' is not assignable to type '"No check-ins in {days} days. A small restart keeps it alive."'.
+lib/i18n/dictionaries/ar.ts(134,7): error TS2322: Type '"لا مراجعة لليوم بعد"' is not assignable to type '"No review for today yet"'.
+lib/i18n/dictionaries/ar.ts(135,7): error TS2322: Type '"تأمّل دقيقتين يساعد على إغلاق اليوم جيدًا."' is not assignable to type '"A two-minute reflection helps close the day well."'.
+lib/i18n/dictionaries/ar.ts(138,7): error TS2322: Type '"{routineName} منتصفة الإنجاز"' is not assignable to type '"{routineName} is partway done"'.
+lib/i18n/dictionaries/ar.ts(139,7): error TS2322: Type '"تبقّت {remaining} خطوات — أنهها وأنت متذكّر لها."' is not assignable to type '"{remaining} steps left — finish while it's fresh."'.
+lib/i18n/dictionaries/ar.ts(142,7): error TS2322: Type '"سلسلتك ({streak} يومًا) في خطر"' is not assignable to type '"Your {streak}-day streak is at risk"'.
+lib/i18n/dictionaries/ar.ts(143,7): error TS2322: Type '"لم تسجّل أي شيء اليوم بعد."' is not assignable to type '"You haven't logged anything today yet."'.
+lib/i18n/dictionaries/ar.ts(146,7): error TS2322: Type '"خذ نفسًا أولًا"' is not assignable to type '"Take a breath first"'.
+lib/i18n/dictionaries/ar.ts(147,7): error TS2322: Type '"لحظة هدوء قصيرة قبل أن تكمل — بلا استعجال."' is not assignable to type '"A short moment of stillness before you continue — no rush."'.
+lib/i18n/dictionaries/ar.ts(150,7): error TS2322: Type '"حان شهر رمضان"' is not assignable to type '"It's Ramadan"'.
+lib/i18n/dictionaries/ar.ts(151,7): error TS2322: Type '"فكّر في هدف يومي أخف هذا الشهر، وراجع العادات الروحانية في مكتبتك."' is not assignable to type '"Consider a lighter daily goal this month, and check the spiritual habits in your library."'.
+lib/i18n/dictionaries/ar.ts(155,5): error TS2322: Type '"أهلًا {name} 👋"' is not assignable to type '"Hi {name} 👋"'.
+lib/i18n/dictionaries/ar.ts(156,5): error TS2322: Type '"أهلًا بك 👋"' is not assignable to type '"Hi there 👋"'.
+lib/i18n/dictionaries/ar.ts(157,5): error TS2322: Type '"كل يوم فرصة جديدة لتنمو قليلًا"' is not assignable to type '"Every day is a new chance to grow a little"'.
+lib/i18n/dictionaries/ar.ts(158,5): error TS2322: Type '"{count} مهام بحاجة إلى اهتمام"' is not assignable to type '"{count} tasks need attention"'.
+lib/i18n/dictionaries/ar.ts(159,5): error TS2322: Type '"{count} عادات لهذا اليوم"' is not assignable to type '"{count} habits for today"'.
+lib/i18n/dictionaries/ar.ts(160,5): error TS2322: Type '"روتين بانتظار الإكمال"' is not assignable to type '"A routine is waiting to be finished"'.
+lib/i18n/dictionaries/ar.ts(161,5): error TS2322: Type '"كل شيء على ما يرام"' is not assignable to type '"Everything's in good shape"'.
+lib/i18n/dictionaries/ar.ts(162,5): error TS2322: Type '"عرض التفاصيل"' is not assignable to type '"Show details"'.
+lib/i18n/dictionaries/ar.ts(163,5): error TS2322: Type '"إخفاء التفاصيل"' is not assignable to type '"Hide details"'.
+lib/i18n/dictionaries/ar.ts(164,5): error TS2322: Type '"{done} من {total} عادات اليوم مُنجَزة"' is not assignable to type '"{done} of {total} habits done today"'.
+lib/i18n/dictionaries/ar.ts(165,5): error TS2322: Type '"أولويات اليوم"' is not assignable to type '"Today's Priorities"'.
+lib/i18n/dictionaries/ar.ts(166,5): error TS2322: Type '"إجراءات سريعة"' is not assignable to type '"Quick Actions"'.
+lib/i18n/dictionaries/ar.ts(167,5): error TS2322: Type '"لا شيء عالق حاليًا — أنت في المقدمة."' is not assignable to type '"You're all caught up for now."'.
+lib/i18n/dictionaries/ar.ts(168,5): error TS2322: Type '"مهام متأخرة"' is not assignable to type '"Overdue tasks"'.
+lib/i18n/dictionaries/ar.ts(169,5): error TS2322: Type '"عادات اليوم"' is not assignable to type '"Today's habits"'.
+lib/i18n/dictionaries/ar.ts(170,5): error TS2322: Type '"روتين غير مكتمل"' is not assignable to type '"Unfinished routines"'.
+lib/i18n/dictionaries/ar.ts(171,5): error TS2322: Type '"اقتراحات ذكية"' is not assignable to type '"Smart Suggestions"'.
+lib/i18n/dictionaries/ar.ts(172,5): error TS2322: Type '"لا اقتراحات الآن — كل شيء تحت السيطرة."' is not assignable to type '"No suggestions right now — nice and steady."'.
+lib/i18n/dictionaries/ar.ts(173,5): error TS2322: Type '"تجاهل"' is not assignable to type '"Dismiss"'.
+lib/i18n/dictionaries/ar.ts(174,5): error TS2322: Type '"أحداث قادمة"' is not assignable to type '"Upcoming events"'.
+lib/i18n/dictionaries/ar.ts(175,5): error TS2322: Type '"لا أحداث قادمة."' is not assignable to type '"No upcoming events."'.
+lib/i18n/dictionaries/ar.ts(176,5): error TS2322: Type '"أضف واحدًا"' is not assignable to type '"Add one"'.
+lib/i18n/dictionaries/ar.ts(177,5): error TS2322: Type '"ملخّص التقدّم"' is not assignable to type '"Progress Summary"'.
+lib/i18n/dictionaries/ar.ts(178,5): error TS2322: Type '"نقاط الخبرة"' is not assignable to type '"XP"'.
+lib/i18n/dictionaries/ar.ts(179,5): error TS2322: Type '"التتابع"' is not assignable to type '"Streak"'.
+lib/i18n/dictionaries/ar.ts(180,5): error TS2322: Type '"لم يبدأ بعد"' is not assignable to type '"Not started yet"'.
+lib/i18n/dictionaries/ar.ts(181,5): error TS2322: Type '"الإنجازات"' is not assignable to type '"Achievements"'.
+lib/i18n/dictionaries/ar.ts(182,5): error TS2322: Type '"{unlocked}/{total} إنجاز"' is not assignable to type '"{unlocked}/{total} achievements"'.
+lib/i18n/dictionaries/ar.ts(183,5): error TS2322: Type '"عرض الكل"' is not assignable to type '"View all"'.
+lib/i18n/dictionaries/ar.ts(184,5): error TS2322: Type '"هدف اليوم"' is not assignable to type '"Today's Goal"'.
+lib/i18n/dictionaries/ar.ts(185,5): error TS2322: Type '"{tasks} مهام · {habits} عادات · {routines} روتين"' is not assignable to type '"{tasks} tasks · {habits} habits · {routines} routines"'.
+lib/i18n/dictionaries/ar.ts(186,5): error TS2322: Type '"بم تنوي اليوم؟"' is not assignable to type '"What's your intention today?"'.
+lib/i18n/dictionaries/ar.ts(187,5): error TS2322: Type '"اكتبها بكلمات قليلة..."' is not assignable to type '"Write it in a few words..."'.
+lib/i18n/dictionaries/ar.ts(188,5): error TS2322: Type '"لحظة تأمل"' is not assignable to type '"A moment to reflect"'.
+lib/i18n/dictionaries/ar.ts(189,5): error TS2322: Type '"{days} يومًا في هذه الرحلة — {xp} نقطة خبرة، أطول سلسلة {streak} يومًا، و{journeys} رحلة طويلة الأمد بدأتها. خطوات صغيرة وثابتة."' is not assignable to type '"{days} days on this journey — {xp} XP earned, a {streak}-day streak at your best, and {journeys} long-term journeys started. Small, steady steps."'.
+lib/i18n/dictionaries/ar.ts(192,5): error TS2322: Type '"أضف مهمة..."' is not assignable to type '"Add a task..."'.
+lib/i18n/dictionaries/ar.ts(193,5): error TS2322: Type '"لا مهام بعد. أضف أول مهمة أعلاه."' is not assignable to type '"No tasks yet. Add your first one above."'.
+lib/i18n/dictionaries/ar.ts(194,5): error TS2322: Type '"أكملت مهمة"' is not assignable to type '"Completed a task"'.
+lib/i18n/dictionaries/ar.ts(195,5): error TS2322: Type '"مهام أخرى"' is not assignable to type '"Other tasks"'.
+lib/i18n/dictionaries/ar.ts(198,5): error TS2322: Type '"عنوان الملاحظة..."' is not assignable to type '"Note title..."'.
+lib/i18n/dictionaries/ar.ts(199,5): error TS2322: Type '"اكتب شيئًا..."' is not assignable to type '"Write something..."'.
+lib/i18n/dictionaries/ar.ts(200,5): error TS2322: Type '"حفظ الملاحظة"' is not assignable to type '"Save note"'.
+lib/i18n/dictionaries/ar.ts(201,5): error TS2322: Type '"لا ملاحظات بعد. اكتب أول ملاحظة أعلاه."' is not assignable to type '"No notes yet. Write your first one above."'.
+lib/i18n/dictionaries/ar.ts(202,5): error TS2322: Type '"أنشأت ملاحظة"' is not assignable to type '"Created a note"'.
+lib/i18n/dictionaries/ar.ts(205,5): error TS2322: Type '"عادة جديدة..."' is not assignable to type '"New habit..."'.
+lib/i18n/dictionaries/ar.ts(206,5): error TS2322: Type '"لا عادات بعد. أضف واحدة لتبدأ التتبّع."' is not assignable to type '"No habits yet. Add one to start tracking."'.
+lib/i18n/dictionaries/ar.ts(207,5): error TS2322: Type '"سجّلت عادة"' is not assignable to type '"Logged a habit"'.
+lib/i18n/dictionaries/ar.ts(208,5): error TS2322: Type '"تحديد كمُنجَز"' is not assignable to type '"Mark complete"'.
+lib/i18n/dictionaries/ar.ts(209,5): error TS2322: Type '"تحديد كغير مُنجَز"' is not assignable to type '"Mark incomplete"'.
+lib/i18n/dictionaries/ar.ts(210,5): error TS2322: Type '"تم اليوم"' is not assignable to type '"Done today"'.
+lib/i18n/dictionaries/ar.ts(213,5): error TS2322: Type '"اسم الروتين"' is not assignable to type '"Routine name"'.
+lib/i18n/dictionaries/ar.ts(214,5): error TS2322: Type '"أضف خطوة واضغط +"' is not assignable to type '"Add a step and press +"'.
+lib/i18n/dictionaries/ar.ts(215,5): error TS2322: Type '"إنشاء روتين"' is not assignable to type '"Create routine"'.
+lib/i18n/dictionaries/ar.ts(216,5): error TS2322: Type '"لا روتين بعد. ابنِ واحدًا بخطوات مرتّبة."' is not assignable to type '"No routines yet. Build one with a few ordered steps."'.
+lib/i18n/dictionaries/ar.ts(217,5): error TS2322: Type '"إعادة تعيين"' is not assignable to type '"Reset"'.
+lib/i18n/dictionaries/ar.ts(218,5): error TS2322: Type '"أنهيت روتينًا"' is not assignable to type '"Finished a routine"'.
+lib/i18n/dictionaries/ar.ts(220,7): error TS2322: Type '"الصباح"' is not assignable to type '"Morning"'.
+lib/i18n/dictionaries/ar.ts(221,7): error TS2322: Type '"بعد الظهر"' is not assignable to type '"Afternoon"'.
+lib/i18n/dictionaries/ar.ts(222,7): error TS2322: Type '"المساء"' is not assignable to type '"Evening"'.
+lib/i18n/dictionaries/ar.ts(223,7): error TS2322: Type '"أي وقت"' is not assignable to type '"Anytime"'.
+lib/i18n/dictionaries/ar.ts(227,5): error TS2322: Type '"عنوان الحدث"' is not assignable to type '"Event title"'.
+lib/i18n/dictionaries/ar.ts(228,5): error TS2322: Type '"لا أحداث في هذا اليوم."' is not assignable to type '"No events on this day."'.
+lib/i18n/dictionaries/ar.ts(229,5): error TS2322: Type '"{date}، {count} حدث"' is not assignable to type '"{date}, {count} events"'.
+lib/i18n/dictionaries/ar.ts(230,5): error TS2322: Type '"{date}، {count} حدث، اليوم المحدد حاليًا"' is not assignable to type '"{date}, {count} events, currently selected day"'.
+lib/i18n/dictionaries/ar.ts(231,5): error TS2322: Type '"اث"' is not assignable to type '"Mo"'.
+lib/i18n/dictionaries/ar.ts(232,5): error TS2322: Type '"ثلا"' is not assignable to type '"Tu"'.
+lib/i18n/dictionaries/ar.ts(233,5): error TS2322: Type '"أرب"' is not assignable to type '"We"'.
+lib/i18n/dictionaries/ar.ts(234,5): error TS2322: Type '"خم"' is not assignable to type '"Th"'.
+lib/i18n/dictionaries/ar.ts(235,5): error TS2322: Type '"جمع"' is not assignable to type '"Fr"'.
+lib/i18n/dictionaries/ar.ts(236,5): error TS2322: Type '"سبت"' is not assignable to type '"Sa"'.
+lib/i18n/dictionaries/ar.ts(237,5): error TS2322: Type '"أحد"' is not assignable to type '"Su"'.
+lib/i18n/dictionaries/ar.ts(240,5): error TS2322: Type '"اسم المجال (مثل: الصحة)"' is not assignable to type '"Area name (e.g. Health)"'.
+lib/i18n/dictionaries/ar.ts(241,5): error TS2322: Type '"الوصف (اختياري)"' is not assignable to type '"Description (optional)"'.
+lib/i18n/dictionaries/ar.ts(242,5): error TS2322: Type '"إضافة مجال"' is not assignable to type '"Add area"'.
+lib/i18n/dictionaries/ar.ts(243,5): error TS2322: Type '"لا مجالات حياة بعد. أنشئ واحدًا لتنظيم مهامك وملاحظاتك وعاداتك."' is not assignable to type '"No life areas yet. Create one to organize your tasks, notes, and habits."'.
+lib/i18n/dictionaries/ar.ts(244,5): error TS2322: Type '"أنشأت مجال حياة"' is not assignable to type '"Created a life area"'.
+lib/i18n/dictionaries/ar.ts(245,5): error TS2322: Type '"اختر لونًا"' is not assignable to type '"Select color"'.
+lib/i18n/dictionaries/ar.ts(248,5): error TS2322: Type '"التقييم"' is not assignable to type '"Rating"'.
+lib/i18n/dictionaries/ar.ts(249,5): error TS2322: Type '"ما الذي سار جيدًا؟"' is not assignable to type '"What went well?"'.
+lib/i18n/dictionaries/ar.ts(250,5): error TS2322: Type '"ما الذي يحتاج تحسينًا؟"' is not assignable to type '"What to improve?"'.
+lib/i18n/dictionaries/ar.ts(251,5): error TS2322: Type '"حفظ المراجعة"' is not assignable to type '"Save review"'.
+lib/i18n/dictionaries/ar.ts(252,5): error TS2322: Type '"لا مراجعات بعد. تأمّل يومك أو أسبوعك أو شهرك."' is not assignable to type '"No reviews yet. Reflect on your day, week, or month."'.
+lib/i18n/dictionaries/ar.ts(253,5): error TS2322: Type '"أرسلت مراجعة"' is not assignable to type '"Submitted a review"'.
+lib/i18n/dictionaries/ar.ts(254,5): error TS2322: Type '"لديك بالفعل مراجعة {kind} لهذه الفترة."' is not assignable to type '"You already have a {kind} review for this period."'.
+lib/i18n/dictionaries/ar.ts(255,5): error TS2322: Type '"جلسة المراجعة"' is not assignable to type '"Reflection session"'.
+lib/i18n/dictionaries/ar.ts(256,5): error TS2322: Type '"مراجعات سابقة"' is not assignable to type '"Past reviews"'.
+lib/i18n/dictionaries/ar.ts(258,7): error TS2322: Type '"يومية"' is not assignable to type '"daily"'.
+lib/i18n/dictionaries/ar.ts(259,7): error TS2322: Type '"أسبوعية"' is not assignable to type '"weekly"'.
+lib/i18n/dictionaries/ar.ts(260,7): error TS2322: Type '"شهرية"' is not assignable to type '"monthly"'.
+lib/i18n/dictionaries/ar.ts(264,5): error TS2322: Type '"ابحث في المقالات والوسوم والمحتوى..."' is not assignable to type '"Search articles, tags, content..."'.
+lib/i18n/dictionaries/ar.ts(265,5): error TS2322: Type '"عنوان المقال"' is not assignable to type '"Article title"'.
+lib/i18n/dictionaries/ar.ts(266,5): error TS2322: Type '"اكتب معرفتك..."' is not assignable to type '"Write your knowledge..."'.
+lib/i18n/dictionaries/ar.ts(267,5): error TS2322: Type '"وسوم (مفصولة بفواصل)"' is not assignable to type '"Tags (comma separated)"'.
+lib/i18n/dictionaries/ar.ts(268,5): error TS2322: Type '"إضافة مقال"' is not assignable to type '"Add article"'.
+lib/i18n/dictionaries/ar.ts(269,5): error TS2322: Type '"لا مقالات بعد."' is not assignable to type '"No articles yet."'.
+lib/i18n/dictionaries/ar.ts(270,5): error TS2322: Type '"لا مقالات مطابقة."' is not assignable to type '"No matching articles."'.
+lib/i18n/dictionaries/ar.ts(271,5): error TS2322: Type '"مقال جديد"' is not assignable to type '"New article"'.
+lib/i18n/dictionaries/ar.ts(274,5): error TS2322: Type '"إنجاز المهام"' is not assignable to type '"Task completion"'.
+lib/i18n/dictionaries/ar.ts(275,5): error TS2322: Type '"مهام منجَزة"' is not assignable to type '"Tasks done"'.
+lib/i18n/dictionaries/ar.ts(276,5): error TS2322: Type '"الملاحظات"' is not assignable to type '"Notes"'.
+lib/i18n/dictionaries/ar.ts(277,5): error TS2322: Type '"متوسط المراجعات"' is not assignable to type '"Avg review"'.
+lib/i18n/dictionaries/ar.ts(278,5): error TS2322: Type '"تسجيلات العادات (30 يومًا)"' is not assignable to type '"Habit check-ins (30 days)"'.
+lib/i18n/dictionaries/ar.ts(279,5): error TS2322: Type '"لا نشاط عادات بعد."' is not assignable to type '"No habit activity yet."'.
+lib/i18n/dictionaries/ar.ts(280,5): error TS2322: Type '"{count} حدث تقويم إجمالًا"' is not assignable to type '"{count} calendar events total"'.
+lib/i18n/dictionaries/ar.ts(281,5): error TS2322: Type '"لمحة سريعة"' is not assignable to type '"At a glance"'.
+lib/i18n/dictionaries/ar.ts(284,5): error TS2322: Type '"ابحث في كل شيء — مهام، ملاحظات، معرفة، أحداث، مجالات..."' is not assignable to type '"Search everything — tasks, notes, knowledge, events, areas..."'.
+lib/i18n/dictionaries/ar.ts(285,5): error TS2322: Type '"اكتب للبحث في كل Personal OS الخاص بك."' is not assignable to type '"Type to search across your entire Personal OS."'.
+lib/i18n/dictionaries/ar.ts(286,5): error TS2322: Type '"لا نتائج."' is not assignable to type '"No results found."'.
+lib/i18n/dictionaries/ar.ts(288,7): error TS2322: Type '"مهمة"' is not assignable to type '"Task"'.
+lib/i18n/dictionaries/ar.ts(289,7): error TS2322: Type '"ملاحظة"' is not assignable to type '"Note"'.
+lib/i18n/dictionaries/ar.ts(290,7): error TS2322: Type '"معرفة"' is not assignable to type '"Knowledge"'.
+lib/i18n/dictionaries/ar.ts(291,7): error TS2322: Type '"حدث"' is not assignable to type '"Event"'.
+lib/i18n/dictionaries/ar.ts(292,7): error TS2322: Type '"مجال"' is not assignable to type '"Area"'.
+lib/i18n/dictionaries/ar.ts(296,5): error TS2322: Type '"{count} غير مقروءة"' is not assignable to type '"{count} unread"'.
+lib/i18n/dictionaries/ar.ts(297,5): error TS2322: Type '"تحديد الكل كمقروء"' is not assignable to type '"Mark all read"'.
+lib/i18n/dictionaries/ar.ts(298,5): error TS2322: Type '"لا إشعارات."' is not assignable to type '"No notifications."'.
+lib/i18n/dictionaries/ar.ts(300,7): error TS2322: Type '"معلومة"' is not assignable to type '"Info"'.
+lib/i18n/dictionaries/ar.ts(301,7): error TS2322: Type '"تذكير"' is not assignable to type '"Reminder"'.
+lib/i18n/dictionaries/ar.ts(302,7): error TS2322: Type '"مراجعة"' is not assignable to type '"Review"'.
+lib/i18n/dictionaries/ar.ts(303,7): error TS2322: Type '"نظام"' is not assignable to type '"System"'.
+lib/i18n/dictionaries/ar.ts(307,5): error TS2322: Type '"المستوى"' is not assignable to type '"Level"'.
+lib/i18n/dictionaries/ar.ts(308,5): error TS2322: Type '"السلسلة الحالية"' is not assignable to type '"Current streak"'.
+lib/i18n/dictionaries/ar.ts(309,5): error TS2322: Type '"الأفضل: {days} يومًا"' is not assignable to type '"Best: {days} days"'.
+lib/i18n/dictionaries/ar.ts(310,5): error TS2322: Type '"إجمالي نقاط الخبرة"' is not assignable to type '"Total XP"'.
+lib/i18n/dictionaries/ar.ts(311,5): error TS2322: Type '"{unlocked}/{total} وسام"' is not assignable to type '"{unlocked}/{total} badges"'.
+lib/i18n/dictionaries/ar.ts(312,5): error TS2322: Type '"ما تحقق"' is not assignable to type '"Achieved"'.
+lib/i18n/dictionaries/ar.ts(313,5): error TS2322: Type '"ما ينتظر"' is not assignable to type '"Ahead"'.
+lib/i18n/dictionaries/ar.ts(316,18): error TS2322: Type '"بداية الطريق"' is not assignable to type '"Getting Started"'.
+lib/i18n/dictionaries/ar.ts(316,41): error TS2322: Type '"أكمل مهمتك الأولى"' is not assignable to type '"Complete your first task"'.
+lib/i18n/dictionaries/ar.ts(317,19): error TS2322: Type '"صانع العادات"' is not assignable to type '"Habit Former"'.
+lib/i18n/dictionaries/ar.ts(317,42): error TS2322: Type '"سجّل عادتك الأولى"' is not assignable to type '"Log your first habit"'.
+lib/i18n/dictionaries/ar.ts(318,21): error TS2322: Type '"منجز الروتين"' is not assignable to type '"Routine Runner"'.
+lib/i18n/dictionaries/ar.ts(318,44): error TS2322: Type '"أنهِ روتينًا كاملًا"' is not assignable to type '"Finish a full routine"'.
+lib/i18n/dictionaries/ar.ts(319,20): error TS2322: Type '"عقل متأمّل"' is not assignable to type '"Reflective Mind"'.
+lib/i18n/dictionaries/ar.ts(319,41): error TS2322: Type '"اكتب مراجعتك الأولى"' is not assignable to type '"Write your first review"'.
+lib/i18n/dictionaries/ar.ts(320,16): error TS2322: Type '"على المسار"' is not assignable to type '"On a Roll"'.
+lib/i18n/dictionaries/ar.ts(320,37): error TS2322: Type '"بلغ سلسلة 3 أيام"' is not assignable to type '"Reach a 3-day streak"'.
+lib/i18n/dictionaries/ar.ts(321,16): error TS2322: Type '"محارب الأسبوع"' is not assignable to type '"Week Warrior"'.
+lib/i18n/dictionaries/ar.ts(321,40): error TS2322: Type '"بلغ سلسلة 7 أيام"' is not assignable to type '"Reach a 7-day streak"'.
+lib/i18n/dictionaries/ar.ts(322,17): error TS2322: Type '"لا يُوقَف"' is not assignable to type '"Unstoppable"'.
+lib/i18n/dictionaries/ar.ts(322,37): error TS2322: Type '"بلغ سلسلة 30 يومًا"' is not assignable to type '"Reach a 30-day streak"'.
+lib/i18n/dictionaries/ar.ts(323,16): error TS2322: Type '"قاهر المهام"' is not assignable to type '"Task Slayer"'.
+lib/i18n/dictionaries/ar.ts(323,38): error TS2322: Type '"أكمل 10 مهام"' is not assignable to type '"Complete 10 tasks"'.
+lib/i18n/dictionaries/ar.ts(324,16): error TS2322: Type '"محترف الإنتاجية"' is not assignable to type '"Productivity Pro"'.
+lib/i18n/dictionaries/ar.ts(324,42): error TS2322: Type '"أكمل 50 مهمة"' is not assignable to type '"Complete 50 tasks"'.
+lib/i18n/dictionaries/ar.ts(325,15): error TS2322: Type '"نجم صاعد"' is not assignable to type '"Rising Star"'.
+lib/i18n/dictionaries/ar.ts(325,34): error TS2322: Type '"بلغ المستوى 5"' is not assignable to type '"Reach level 5"'.
+lib/i18n/dictionaries/ar.ts(326,16): error TS2322: Type '"منجز بارز"' is not assignable to type '"High Achiever"'.
+lib/i18n/dictionaries/ar.ts(326,36): error TS2322: Type '"بلغ المستوى 10"' is not assignable to type '"Reach level 10"'.
+lib/i18n/dictionaries/ar.ts(327,20): error TS2322: Type '"مهندس الحياة"' is not assignable to type '"Life Architect"'.
+lib/i18n/dictionaries/ar.ts(327,43): error TS2322: Type '"أنشئ أول مجال حياة"' is not assignable to type '"Create your first life area"'.
+lib/i18n/dictionaries/ar.ts(328,19): error TS2322: Type '"عقل فضولي"' is not assignable to type '"Curious Mind"'.
+lib/i18n/dictionaries/ar.ts(328,39): error TS2322: Type '"احفظ 5 مقالات معرفية"' is not assignable to type '"Save 5 knowledge articles"'.
+lib/i18n/dictionaries/ar.ts(331,5): error TS2322: Type '"مرحبًا 👋"' is not assignable to type '"Welcome 👋"'.
+lib/i18n/dictionaries/ar.ts(332,5): error TS2322: Type '"يجمع Personal OS مهامك وملاحظاتك وعاداتك وروتينك وتقويمك في مكان واحد. لنُعِدّه."' is not assignable to type '"Personal OS brings your tasks, notes, habits, routines, and calendar into one place. Let's set it up."'.
+lib/i18n/dictionaries/ar.ts(333,5): error TS2322: Type '"لنبدأ"' is not assignable to type '"Get started"'.
+lib/i18n/dictionaries/ar.ts(334,5): error TS2322: Type '"بماذا نناديك؟"' is not assignable to type '"What should we call you?"'.
+lib/i18n/dictionaries/ar.ts(335,5): error TS2322: Type '"اختر مجالات حياتك"' is not assignable to type '"Pick your life areas"'.
+lib/i18n/dictionaries/ar.ts(336,5): error TS2322: Type '"هذه تُنظّم كل ما تتبعه. يمكنك تغييرها لاحقًا."' is not assignable to type '"These organize everything you track. You can change them later."'.
+lib/i18n/dictionaries/ar.ts(337,5): error TS2322: Type '"جارٍ الإعداد..."' is not assignable to type '"Setting up..."'.
+lib/i18n/dictionaries/ar.ts(338,5): error TS2322: Type '"أهلًا بك في Personal OS 🎉"' is not assignable to type '"Welcome to Personal OS 🎉"'.
+lib/i18n/dictionaries/ar.ts(339,5): error TS2322: Type '"مساحتك جاهزة. ابدأ بإضافة مهمة أو عادة."' is not assignable to type '"Your workspace is ready. Start by adding a task or a habit."'.
+lib/i18n/dictionaries/ar.ts(341,7): error TS2322: Type '"الصحة"' is not assignable to type '"Health"'.
+lib/i18n/dictionaries/ar.ts(342,7): error TS2322: Type '"العمل"' is not assignable to type '"Work"'.
+lib/i18n/dictionaries/ar.ts(343,7): error TS2322: Type '"العلاقات"' is not assignable to type '"Relationships"'.
+lib/i18n/dictionaries/ar.ts(344,7): error TS2322: Type '"المال"' is not assignable to type '"Finance"'.
+lib/i18n/dictionaries/ar.ts(345,7): error TS2322: Type '"التعلّم"' is not assignable to type '"Learning"'.
+lib/i18n/dictionaries/ar.ts(346,7): error TS2322: Type '"الهوايات"' is not assignable to type '"Hobbies"'.
+lib/i18n/dictionaries/ar.ts(350,5): error TS2322: Type '"مكان واحد لمهامك وملاحظاتك وعاداتك. بسيط وسريع وملكك بالكامل."' is not assignable to type '"One place for your tasks, notes, and habits. Simple, fast, and entirely yours."'.
+lib/i18n/dictionaries/ar.ts(351,5): error TS2322: Type '"تعذّر العثور على هذه الصفحة."' is not assignable to type '"This page could not be found."'.
+lib/i18n/dictionaries/ar.ts(352,5): error TS2322: Type '"العودة للرئيسية"' is not assignable to type '"Go home"'.
+lib/i18n/dictionaries/ar.ts(353,5): error TS2322: Type '"حدث خطأ ما"' is not assignable to type '"Something went wrong"'.
+lib/i18n/dictionaries/ar.ts(354,5): error TS2322: Type '"وقع خطأ غير متوقّع. يمكنك المحاولة مجددًا."' is not assignable to type '"An unexpected error occurred. You can try again."'.
+lib/i18n/dictionaries/ar.ts(357,5): error TS2322: Type '"العادات"' is not assignable to type '"Habits"'.
+lib/i18n/dictionaries/ar.ts(358,5): error TS2322: Type '"الروتينات"' is not assignable to type '"Routines"'.
+lib/i18n/dictionaries/ar.ts(359,5): error TS2322: Type '"الرحلات"' is not assignable to type '"Journeys"'.
+lib/i18n/dictionaries/ar.ts(360,5): error TS2322: Type '"الكل"' is not assignable to type '"All"'.
+lib/i18n/dictionaries/ar.ts(361,5): error TS2322: Type '"روحاني"' is not assignable to type '"Spiritual"'.
+lib/i18n/dictionaries/ar.ts(362,5): error TS2322: Type '"عمل"' is not assignable to type '"Work"'.
+lib/i18n/dictionaries/ar.ts(363,5): error TS2322: Type '"صحة"' is not assignable to type '"Health"'.
+lib/i18n/dictionaries/ar.ts(364,5): error TS2322: Type '"تعلّم"' is not assignable to type '"Learning"'.
+lib/i18n/dictionaries/ar.ts(365,5): error TS2322: Type '"اجتماعي"' is not assignable to type '"Social"'.
+lib/i18n/dictionaries/ar.ts(366,5): error TS2322: Type '"مبتدئ"' is not assignable to type '"Beginner"'.
+lib/i18n/dictionaries/ar.ts(367,5): error TS2322: Type '"متوسط"' is not assignable to type '"Intermediate"'.
+lib/i18n/dictionaries/ar.ts(368,5): error TS2322: Type '"متقدم"' is not assignable to type '"Advanced"'.
+lib/i18n/dictionaries/ar.ts(369,5): error TS2322: Type '"خبير"' is not assignable to type '"Expert"'.
+lib/i18n/dictionaries/ar.ts(370,5): error TS2322: Type '"يُفتح عند المستوى {level}"' is not assignable to type '"Unlocks at level {level}"'.
+lib/i18n/dictionaries/ar.ts(371,5): error TS2322: Type '"{xp} نقطة خبرة"' is not assignable to type '"{xp} XP"'.
+lib/i18n/dictionaries/ar.ts(372,5): error TS2322: Type '"أضِف لعاداتي"' is not assignable to type '"Add to my habits"'.
+lib/i18n/dictionaries/ar.ts(373,5): error TS2322: Type '"أُضيفت"' is not assignable to type '"Added"'.
+lib/i18n/dictionaries/ar.ts(374,5): error TS2322: Type '"أضِف لروتيناتي"' is not assignable to type '"Add to my routines"'.
+lib/i18n/dictionaries/ar.ts(375,5): error TS2322: Type '"أُضيف"' is not assignable to type '"Added"'.
+lib/i18n/dictionaries/ar.ts(376,5): error TS2322: Type '"ابدأ هذه الرحلة"' is not assignable to type '"Start this journey"'.
+lib/i18n/dictionaries/ar.ts(377,5): error TS2322: Type '"الرحلة قيد التنفيذ"' is not assignable to type '"Journey in progress"'.
+lib/i18n/dictionaries/ar.ts(378,5): error TS2322: Type '"اليوم {current} من {total}"' is not assignable to type '"Day {current} of {total}"'.
+lib/i18n/dictionaries/ar.ts(379,5): error TS2322: Type '"المعالم"' is not assignable to type '"Milestones"'.
+lib/i18n/dictionaries/ar.ts(380,5): error TS2322: Type '"{minutes} دقيقة"' is not assignable to type '"{minutes} min"'.
+lib/i18n/dictionaries/ar.ts(381,5): error TS2322: Type '"{minutes} دقيقة/يوم"' is not assignable to type '"{minutes} min/day"'.
+lib/i18n/dictionaries/ar.ts(382,5): error TS2322: Type '"لا نتائج مطابقة."' is not assignable to type '"No matching items."'.
+lib/i18n/dictionaries/ar.ts(383,5): error TS2322: Type '"ابحث في المكتبة..."' is not assignable to type '"Search the library..."'.
+lib/i18n/translate.ts(6,63): error TS2322: Type '{ common: { save: "حفظ"; cancel: "إلغاء"; delete: "حذف"; edit: "تعديل"; add: "إضافة"; close: "إغلاق"; loading: "جارٍ التحميل..."; search: "بحث"; confirm: "تأكيد"; back: "رجوع"; next: "التالي"; finish: "إنهاء"; ... 5 more ...; savedSuccess: "تم الحفظ"; }; ... 21 more ...; library: { ...; }; }' is not assignable to type '{ readonly common: { readonly save: "Save"; readonly cancel: "Cancel"; readonly delete: "Delete"; readonly edit: "Edit"; readonly add: "Add"; readonly close: "Close"; readonly loading: "Loading..."; ... 10 more ...; readonly savedSuccess: "Saved"; }; ... 21 more ...; readonly library: { ...; }; }'.
+  The types of 'common.save' are incompatible between these types.
+    Type '"حفظ"' is not assignable to type '"Save"'.
+lib/use-daily-goal.ts(35,37): error TS2339: Property 'daily_goal_level' does not exist on type 'never'.
+lib/use-daily-goal.ts(35,62): error TS2339: Property 'daily_goal_level' does not exist on type 'never'.
+lib/use-suggestions.ts(47,35): error TS2339: Property 'current_streak' does not exist on type 'never'.
+lib/use-suggestions.ts(48,44): error TS2339: Property 'last_activity_date' does not exist on type 'never'.
+lib/use-suggestions.ts(52,74): error TS2339: Property 'suggestion_key' does not exist on type 'never'.
+lib/use-suggestions.ts(68,19): error TS2353: Object literal may only specify known properties, and 'user_id' does not exist in type 'never[]'.
+lib/world/use-world-direction.ts(54,64): error TS2339: Property 'growth_level' does not exist on type 'never'.
+lib/world/use-world-direction.ts(55,62): error TS2339: Property 'growth_level' does not exist on type 'never'.

@@ -1,0 +1,18 @@
+# Android / Gradle build artifacts
+.gradle/
+build/
+app/build/
+capture/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Local config
+local.properties
+
+# IDE
+*.iml
+.idea/
+
+# Keep the debug keystore and wrapper scripts checked in.
+!app/debug.keystore
